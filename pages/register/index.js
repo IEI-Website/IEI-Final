@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import {Center} from "@chakra-ui/react";
-import VideoBackground from '../components/VideoBackground';
+import {Center, FormControl, FormLabel, Input, VStack, Button} from "@chakra-ui/react";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import NavBa from '../components/Navba';
+import { Main } from 'next/document';
+import Details from './UserDetails.js';
+import axios from 'axios';
 export default function Home() {
+  
   return (
     <div>
       <Head>
@@ -13,8 +15,7 @@ export default function Home() {
         <meta name="title" content="IEI-BLC FCRIT" />
 
       </Head>
-      <VideoBackground />
-      <Header/><NavBa />
+      <Header/>
       <Center  fontSize="6xl" fontWeight="bold" color="white">
         Registration
       </Center>
@@ -28,7 +29,11 @@ export default function Home() {
         Awards for academic excellence
       </Center>
       <br/><br/><br/>
-      <Footer/>
+      <FormControl >
+          <Details id="details" />
+      </FormControl>    
+    <Footer/>
     </div>
+
   )
 }

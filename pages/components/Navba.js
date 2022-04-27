@@ -85,7 +85,6 @@ const MenuLinks = ({ isOpen }) => {
   Categories
   </MenuButton>
   <MenuList>
-        <MenuItem to="/categories/generalInstructions" color={"black"}>General Instructions </MenuItem>
         <MenuItem to="/categories/researchExcellence" color={"black"}>Research Excellence (National/Regional)  </MenuItem>
         <MenuItem to="/categories/academicExcellence" color={"black"}>Academic Excellence (National/Regional)</MenuItem>
         <MenuItem to="/categories/industryExcellence" color={"black"}>Industry Excellence Award</MenuItem>
@@ -94,9 +93,15 @@ const MenuLinks = ({ isOpen }) => {
 <MenuItem as={Button} bgColor="gray" color={"black"} to="/imp">
     Imp Dates
 </MenuItem>  
-<MenuItem as={Button} bgColor="gray" color={"black"} to="/register">
-    Registration
-</MenuItem>  
+<Menu>
+  <MenuButton as={Button} bgColor="gray" color={"black"}  rightIcon={<ChevronDownIcon />}>
+  Registration
+  </MenuButton>
+  <MenuList>
+        <MenuItem to="/categories/generalInstructions" color={"black"}>Instructions </MenuItem>
+        <MenuItem to="/register" color={"black"}>Registration Form</MenuItem>
+  </MenuList>
+</Menu> 
 <MenuItem as={Button} bgColor="gray" color={"black"} to="/photo">
     Photo-Gallery
 </MenuItem>   

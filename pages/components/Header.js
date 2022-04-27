@@ -13,7 +13,7 @@ const NavBar = (props) => {
       
       <Logo/>
       {/* <Text fontWeight={"bold"}><p align="center" >IEI</p></Text> */}
-      <div class="main-text" align="center" >
+      <div className="main-text" align="center" >
         <Text marginStart={"100"} fontSize={"2xl"} fontWeight={"bold"} color="black" align={"center"}> The Institution of Engineers (India)  Organises </Text>
         <Text marginStart={"100"}fontSize={"2xl"} fontWeight={"bold"} color="black" align={"center"}> IEI Excellence Awards 2022</Text>
         {/* <Text fontWeight={"bold"} color="black" align={"center"}>Vibration Engineering, Science, and Technology (INVEST 22)</Text> */}

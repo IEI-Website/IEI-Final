@@ -7,9 +7,10 @@ import {
     Stack,
     Image,
   } from '@chakra-ui/react';
+import { SocialIcon } from 'react-social-icons';
   
   
-  export default function Card({ image, personName, designation}) {
+  export default function Card({ image, personName, socialUrl}) {
     return (
       <Center>
         <Box
@@ -32,12 +33,9 @@ import {
             />
           </Box>
           <Stack pt={10} align={'center'}>
-            <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
+            <Heading fontSize={'2xl'} fontFamily="fantasy" fontWeight={500}>
               {personName}
             </Heading>
-            <Text fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-                {designation}
-            </Text>
             </Stack>
         </Box>
       </Center>

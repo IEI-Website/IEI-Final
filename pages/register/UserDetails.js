@@ -6,6 +6,8 @@ import {
   Heading,
   Text,
   SimpleGrid,
+  Box,
+  Center,
   GridItem,
   Select,
   Checkbox,
@@ -43,9 +45,6 @@ const Details = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const toast = useToast();
   const [checkVal, setCheckVal] = useState(Boolean(false));
-  const PDFMerger = require('pdf-merger-js');
-
-var merger = new PDFMerger();
 
 async function mergePDF(urls) {
   
@@ -99,31 +98,16 @@ async function modifyPdf(url) {
 }
   async function send(){
     
-    // var pdfDoc = await mergeAllPDFs([pdfUrl,fieldsUrl])
     var formData = new FormData();
-    // setPdfFile(pdfDoc);
-    // var mergedURL = URL.createObjectURL(pdfDoc);
-    // setPdfUrl(mergedURL);
     formData.append('userDoc',pdfFile);
     formData.append('userDoc', fieldsPdf);
-    // console.log(pdfDoc);
-    // console.log("pdf Doc ",typeof pdfDoc);
-    // if (checkVal==false){
-    //   alert("please tick the check box !");
-    // }
-      // formData.append('userDetails',fieldsPdf);
-      // setFieldsPdf(blobPDF);
-      // formData.append('userDetails', blobPDF);
-      // console.log("file : ",blobPDF);
+    
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data',
        }
            }
-        //    for (var pair of formData.entries()) {
-        //     console.log(pair[0]+ ', ' + JSON.stringify(pair[1])); 
-        // }
-    
+       
     axios.post('http://localhost:3000/mergepdf', formData, config)
     .then(res => {
       alert("Form submitted successfully !!!");
@@ -173,13 +157,14 @@ async function modifyPdf(url) {
 
 
   return (
-    <VStack w="full" h="full" p={10} spacing={10} alignItems="center" >
-      <VStack spacing={3} alignItems="flex-start">
+    <Box >
+       <Center backgroundColor="whiteAlpha.800" padding="10px" spacing={10} alignItems="center" >
+      <form id='registration-form'>
+      <SimpleGrid boxShadow="dark-lg" borderColor="black" borderEnd="ActiveBorder" spacing="10px" padding="50px" border="2px" columns={1} rowGap={6} >
+        <GridItem>
         <Heading textColor={secondaryTextColor} size="2xl">Registration Form</Heading>
         <Text textColor={secondaryTextColor}>Please make sure you upload all the necessary Documents before submitting the form.</Text>
-      </VStack>
-      <form id='registration-form'>
-      <SimpleGrid columns={1} rowGap={6} w="full">
+        </GridItem>
         <GridItem colSpan={2}>
           <FormControl isRequired>
             <FormLabel textColor={secondaryTextColor}>Name</FormLabel>
@@ -261,16 +246,15 @@ async function modifyPdf(url) {
         </GridItem>
 
           <br></br>
-          <Button mt="5" mb="5" type="submit" bgColor="green.500"  onClick={send} size="lg" >
+          <Button mt="5" mb="5" bgColor="green.500"  onClick={send} size="lg" >
             Submit
           </Button>
          </GridItem>
          <br/> 
       </SimpleGrid>
       </form>
-      <script src='https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.js'></script>
-      <script src='https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js'></script>
-    </VStack>
+    </Center>
+    </Box>
   );
 };
 

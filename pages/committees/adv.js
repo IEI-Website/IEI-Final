@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import {Center,Text} from "@chakra-ui/react";
+import {Center,Text,SimpleGrid,Heading,HStack, Box} from "@chakra-ui/react";
 import VideoBackground from '../components/VideoBackground';
 import Header from '../components/Header';
+import Card from './Card';
 import Footer from '../components/Footer';
 import NavBa from '../components/Navba';
 export default function Homie() {
@@ -16,43 +17,44 @@ export default function Homie() {
       <VideoBackground />
       <Header/>
       <NavBa />
-      <Center  fontSize="5xl" fontWeight="bold" color="black">
-      Committees
-      </Center><br/>
-     
-      
-      <Center  fontSize="3xl" fontWeight="bold" color="black"><pre fontWeight="bold">
+      <Center  fontSize="5xl" fontWeight="bold" color="black"><pre fontWeight="bold">
       Advisory Committee</pre>
       </Center>
-       <br/>
-      <Text marginStart={"200"}color="black">
-      <Text fontWeight={"bold"} fontSize="2xl"><pre fontWeight="bold">Dr. M. B. Dagaonkar                         Rev. Fr. Saturnino Almeida          </pre></Text> 
-      <pre>Past Council Member, IEI and Past Chairman IEI MSC                Regional Superior and Managing Director, ATEC, Vashi.                      </pre> 
       <br/>
-      <Text fontWeight={"bold"} fontSize="2xl"><pre fontWeight="bold">Cdr. Dr. Bhaskar Bhandarkar                 Dr. S. M. Khot         </pre></Text> 
-      <pre>IEI Council Member                                                Principal, FCRIT Vashi                      </pre> 
-      <br/>
-      <Text fontWeight={"bold"}  fontSize="2xl"><pre fontWeight="bold">Er. Vijay C. Kamble                         Dr. Milind Shah           </pre></Text> 
-      <pre>Hon. Secretary IEI MSC                                            Dean (Academics) and Head, EXTC Engg. Dept.<br/>                                                                  FCRIT Vashi.                     </pre> 
-      <br/>
-      <Text fontWeight={"bold"} fontSize="2xl"><pre fontWeight="bold">Dr. Kishanrao M. Godbole                    Dr. Lata Ragha           </pre></Text> 
-      <pre>Chairman, IEI BLC                                                 Dean (P.G. Studies) and Head, Comp. Engg. Dept.,<br/>                                                                  FCRIT Vashi                     </pre> 
-      <br/>
-      <Text fontWeight={"bold"} fontSize="2xl"><pre fontWeight="bold">Er. Sanjay R. Bagul                         Dr. Bindu S.          </pre></Text> 
-      <pre>Hon. Secretary, IEI BLC                                           Dean (Student Affairs) and Head, Elect. Engg. Dept.,<br/> FCRIT Vashi..                      </pre> 
-      <br/>
-      <Text fontWeight={"bold"} fontSize="2xl"><pre fontWeight="bold">Er. Keshav K. Verkhedkar                    Dr. Sushil Thale        </pre></Text> 
-      <pre>Imm. Past Chairman, IEI BLC.                                      Dean (R &D), FCRIT Vashi.                       </pre> 
-      <br/>
-      <Text fontWeight={"bold"} fontSize="2xl"><pre fontWeight="bold">Dr. Samir C. Nimkar  </pre></Text> 
-      <pre>Imm. Past Hon. Secretary, IEI BLC  </pre> 
-
-      
-
-      </Text>
-      <br/>
-      <br/>
-      
+      <HStack>
+      <Box backgroundColor="black" h="3px" marginLeft="5%" w="30%"/>
+        <Heading >
+          IEI Committee Members
+        </Heading>
+      <Box  backgroundColor="black" h="3px" marginRight="5%" w="30%" />
+      </HStack>
+      <br/><br/>
+      <SimpleGrid paddingBottom="20" columns={3}  spacingX='20px' spacingY='20px'>
+      <Card personName={"Er. K. K.Verkhedkar"} des4={"Imm. Past Chairman, IEI BLC."} image="/photos/KK-varkhedkar.jpeg"  /> 
+      <Card personName={"Er. Vijay C. Kamble  "}des4={"Hon. Secretary IEI MSC"} image="/photos/kamble.jpeg"/> 
+      <Card personName={"Dr. M.B. Dagaonkar"}des4={"Past Council Member, IEI "} des5={"Past Chairman IEI MSC  "} image="/photos/mohan.jpg" /> 
+      <Card personName={"Cdr.Dr.B.Bhandarkar "}des4={"IEI Council Member"} image="/photos/mr_bhandarkar.jpeg"  /> 
+      <Card personName={"Dr. K. M.Godbole"}des4={"Chairman, IEI BLC"} image="/photos/godbole.jpeg" /> 
+      <Card personName={"Dr. Samir C. Nimkar"}des4={"Imm. Past Hon. Secretary, IEI BLC"} image="/photos/nimkar.jpeg"  /> 
+      <Card personName={"Er. Sanjay R. Bagul "}des4={"Hon. Secretary, IEI BLC  "} image="/photos/sanjay.jpeg"  /> 
+      </SimpleGrid>
+      <HStack>
+      <Box backgroundColor="black" h="2px" marginLeft="5%" w="40%"/>
+        <Heading>
+          FCRIT Committee Members
+        </Heading>
+      <Box  backgroundColor="black" h="2px" marginRight="5%" w="40%" />
+      </HStack>
+      <br/><br/>
+      <SimpleGrid paddingBottom="100" columns={3}  spacingX='40px' spacingY='20px'>
+      <Card personName={"Fr. Saturnino Almeida"}des4={"Regional Superior and Managing Director, ATEC, Vashi."} image="/photos/Fr.jpeg"  /> 
+      <Card personName={"Dr. S M  Khot"} des4={"Principal, FCRIT Vashi"} image="/photos/sm-khot.jpeg"   /> 
+      <Card personName={"Dr. Nilaj Deshmukh"}des4={"Dean (Faculty) and Head "}des5={"(Mech),FCRIT, Vashi"} image="/photos/dr-nilaj-deshmukh.jpeg"   /> 
+      <Card personName={"Dr. Bindu S"}des4={"Dean (Student Affairs) and Head "}des5={"(Elec),FCRIT, Vashi"} image="/photos/Bindu.jpeg"   /> 
+      <Card personName={"Dr. Milind Shah"}des4={"Dean (Academics) and Head "}des5={"(EXTC),FCRIT, Vashi"} image="/photos/milind-shah.jpeg"   /> 
+      <Card personName={"Dr. Lata Ragha"}des4={"Dean (P.G. Studies) and Head "}des5={"(Comp),FCRIT, Vashi"} image="/photos/lata.jpeg"   /> 
+      <Card personName={"Dr. Sushil Thale"}des4={"Dean (R &D) ,"}des5={"FCRIT, Vashi"} image="/photos/sushil.jpeg"   /> 
+      </SimpleGrid>
       <br/>
       
       <br/><br/><br/>

@@ -76,7 +76,7 @@ const researchExcellence = () => {
       <br/>
       <Text  fontSize="xl" color="black" marginStart={"350"}>
       <Text  fontSize="2xl" fontWeight="bold">
-      (c)	Researcher from Industry <br/>
+      (c)	Researcher from Industry / Govt. Organization/ Consultancy Firm<br/>
       </Text>
       Entry Level Criteria<br/>
       The research should be the one conducted at the Organization currently affiliated with.<br/>
@@ -98,17 +98,7 @@ const researchExcellence = () => {
       <br/>
       <br/>
       <br/>
-      <Text  fontSize="xl" color="black" marginStart={""}>
-      <Text  fontSize="2xl" color="black" marginStart={"350"} fontWeight="bold">
-      (d)	Researcher from Govt. Organization <br/>
-      </Text><br/>
-      <Text fontSize="3xl" color="black" marginStart={"350"}  fontWeight="bold">
-      Document to be uploaded as a single .pdf  
-      </Text>
-      <br/>
-      <Text  fontWeight="normal" color="black" marginStart={"350"}>
-      Same as above</Text>
-      </Text>
+      
       <Footer/>
         </div>
     );

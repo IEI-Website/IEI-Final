@@ -39,6 +39,7 @@
     "react-qr-code": "^2.0.3",
     "react-responsive-carousel": "^3.2.23",
     "react-social-icons": "^5.13.0",
+    "react-ticker": "^1.3.2",
     "swiper": "^8.1.4",
     "vertical-marquee-view": "^1.1.1"
   },

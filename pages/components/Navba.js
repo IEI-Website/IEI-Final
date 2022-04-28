@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, Box, Flex, Text, Button, Stack,Menu,MenuButton,MenuList,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider, } from "@chakra-ui/react";
-import { ChevronDownIcon } from '@chakra-ui/icons'
+import { Link, Box, Flex, Text, Button, Stack, Menu, MenuButton, MenuList, MenuItemOption, MenuGroup, MenuOptionGroup, MenuDivider, } from "@chakra-ui/react";
+import { ChevronDownIcon,ChevronRightIcon } from '@chakra-ui/icons'
 const NavBa = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -67,33 +67,34 @@ const MenuLinks = ({ isOpen }) => {
         direction={["column", "row", "row", "row"]}
         pt={[4, 4, 0, 0]}
       >
-    
-  <MenuItem as={Button} bgColor="gray" color={"black"} to="/">
-    Home
-  </MenuItem>
-  <Menu>
-  <MenuButton as={Button} bgColor="gray" color={"black"}  rightIcon={<ChevronDownIcon />}>
-  Committees
-  </MenuButton>
-  <MenuList>
-        <MenuItem to="/committees" color={"black"}>Core Committee </MenuItem>
-        <MenuItem to="/committees/adv" color={"black"}>Advisory Committee  </MenuItem>
-        <MenuItem to="/committees/org" color={"black"}>Organising Committee  </MenuItem>
-  </MenuList></Menu>
-  <Menu>
-  <MenuButton as={Button} bgColor="gray" color={"black"}  rightIcon={<ChevronDownIcon />}>
-  Categories
-  </MenuButton>
-  <MenuList>
-        <MenuItem to="/categories/researchExcellence" color={"black"}>Research Excellence (National/Regional)  </MenuItem>
-        <MenuItem to="/categories/academicExcellence" color={"black"}>Academic Excellence (National/Regional)</MenuItem>
-        <MenuItem to="/categories/industryExcellence" color={"black"}>Industry Excellence Award</MenuItem>
-  </MenuList>
-</Menu>
-<MenuItem as={Button} bgColor="gray" color={"black"} to="/imp">
-    Imp Dates
-</MenuItem>  
-<Menu>
+
+        <MenuItem as={Button} bgColor="gray" color={"black"} to="/">
+          Home
+        </MenuItem>
+        <Menu>
+          <MenuButton as={Button} bgColor="gray" color={"black"} rightIcon={<ChevronDownIcon />}>
+            Committees
+          </MenuButton>
+          <MenuList>
+            <MenuItem to="/committees" color={"black"}>Organising Committee </MenuItem>
+            <MenuItem to="/committees/adv" color={"black"}>Advisory Committee  </MenuItem>
+          </MenuList></Menu>
+        <Menu>
+        <MenuButton as={Button} bgColor="gray" color={"black"}  rightIcon={<ChevronDownIcon />}>
+        Categories
+        </MenuButton>
+        <MenuList>
+              <MenuItem to="/categories/researchExcellence" color={"black"}>Research Excellence (National/Regional)  </MenuItem>
+              <MenuItem to="/categories/academicExcellence" color={"black"}>Academic Excellence (National/Regional)</MenuItem>
+              <MenuItem to="/categories/industryExcellence" color={"black"}>Industry Excellence Award</MenuItem>
+              <MenuItem to="/categories/startupExcellence" color={"black"}>Startup Excellence Award</MenuItem>
+        </MenuList>
+        </Menu>
+
+        <MenuItem as={Button} bgColor="gray" color={"black"} to="/imp">
+          Imp Dates
+        </MenuItem>
+        <Menu>
   <MenuButton as={Button} bgColor="gray" color={"black"}  rightIcon={<ChevronDownIcon />}>
   Registration
   </MenuButton>
@@ -102,9 +103,9 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="/register" color={"black"}>Registration Form</MenuItem>
   </MenuList>
 </Menu> 
-<MenuItem as={Button} bgColor="gray" color={"black"} to="/photo">
-    Photo-Gallery
-</MenuItem>   
+        <MenuItem as={Button} bgColor="gray" color={"black"} to="/photo">
+          Photo-Gallery
+        </MenuItem>
 
       </Stack>
     </Box>
@@ -119,10 +120,10 @@ const NavBaContainer = ({ children, ...props }) => {
       justify="space-between"
       wrap="wrap"
       w="100%"
-    //   mb={4}
-    //   p={2}
-    //   bgImg={["bck.jpg"]}
-    bgColor={["gray"]}
+      //   mb={4}
+      //   p={2}
+      //   bgImg={["bck.jpg"]}
+      bgColor={["gray"]}
       color={["white", "white", "primary.700", "primary.700"]}
       {...props}
     >

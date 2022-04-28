@@ -36,7 +36,7 @@ const academicExcellence = () => {
       <br/>
       <br/>
       <Text  fontSize="xl" color="black" marginStart={"350"}>
-      <Text  fontSize="2xl" fontWeight="bold">
+      <Text  fontSize="2xl" >
       (b)	Teaching Faculty <br/>
       </Text>
       Entry level:<br/>

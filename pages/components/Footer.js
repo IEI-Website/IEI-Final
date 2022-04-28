@@ -1,9 +1,13 @@
 import { Flex, Link, Text } from "@chakra-ui/react";
+import FooterContacts from "./FooterContacts";
 
 export default function Footer() {
   return (
+    <div>
+      <FooterContacts/>
     <Flex w="100%" h={{ md: "9vh" }} py="20px" gridGap="2" align="center" bg={"telegram.700"}>
       <Flex width="90%" mx="auto" flexDir={["column-reverse", "row", "row", "row"]} align="center" >
+        
         <Text noOfLines={2} flex={2} color="white">
           Developed by{" "}
           <Link target="_blank" href="https://github.com/dcostat04">Trevor</Link>
@@ -19,5 +23,6 @@ export default function Footer() {
         </Text>
       </Flex>
     </Flex>
+    </div>
   );
 }

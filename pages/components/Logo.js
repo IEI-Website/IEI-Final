@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Logo(props) {
   return (
     <Box {...props}>
-      <Image src="/iei.png"width={100} height={100} />
+      <Image src="/iei.png" width="150px" height="150px"/>
     </Box>
   );
 }

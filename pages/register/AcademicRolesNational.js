@@ -10,9 +10,9 @@ export default function AcademicRolesNational() {
     return (
         <div>
             <FormControl>
-                <FormLabel>Select your Role</FormLabel>
+                <FormLabel  fontSize="xl">Select your Role</FormLabel>
                 <Select id="applicant-role">
-                    <option value="Student">Student</option>
+                    <option fontSize="xl" value="Student">Student</option>
                     <option value="Teacher">Teaching Faculty</option>
                     <option value="HOD">Head of the Department</option>
                     <option value="Principal">Principal/Director</option>

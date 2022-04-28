@@ -102,6 +102,7 @@ async function modifyPdf(url) {
     formData.append('userDoc',pdfFile);
     formData.append('userDoc', fieldsPdf);
     
+    console.log("pdf appended !!! ");
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data',
@@ -159,12 +160,12 @@ async function modifyPdf(url) {
   return (
     <Box >
        <Center backgroundColor="whiteAlpha.800" padding="10px" spacing={10} alignItems="center" >
-      <form id='registration-form'>
       <SimpleGrid boxShadow="dark-lg" borderColor="black" borderEnd="ActiveBorder" spacing="10px" padding="50px" border="2px" columns={1} rowGap={6} >
         <GridItem>
         <Heading textColor={secondaryTextColor} size="2xl">Registration Form</Heading>
         <Text textColor={secondaryTextColor}>Please make sure you upload all the necessary Documents before submitting the form.</Text>
         </GridItem>
+        <form id='registration-form'>
         <GridItem colSpan={2}>
           <FormControl isRequired>
             <FormLabel textColor={secondaryTextColor}>Name</FormLabel>
@@ -250,9 +251,9 @@ async function modifyPdf(url) {
             Submit
           </Button>
          </GridItem>
+         </form>
          <br/> 
       </SimpleGrid>
-      </form>
     </Center>
     </Box>
   );

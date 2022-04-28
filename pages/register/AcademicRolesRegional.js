@@ -6,7 +6,6 @@ import {
 
 export default function AcademicRolesNational() {
     return (
-        <div>
             <FormControl>
                 <FormLabel>Select your Role</FormLabel>
                 <Select id="applicant-role" >
@@ -14,6 +13,5 @@ export default function AcademicRolesNational() {
                     <option value="Teacher">Teaching Faculty</option>
                 </Select>
             </FormControl>
-        </div>
     );
 }

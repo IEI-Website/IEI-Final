@@ -4,7 +4,7 @@ import {
     Select
 } from '@chakra-ui/react';
 
-export default function ResearchRolesNational() {
+export default function ResearchRolesRegional() {
 
     return (
         <div>

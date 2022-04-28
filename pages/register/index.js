@@ -4,6 +4,7 @@ import {Center, FormControl, FormLabel, Input, VStack, Button} from "@chakra-ui/
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Details from './UserDetails.js';
+import NavBa from '../components/Navba';
 export default function Home() {
   
   return (
@@ -15,14 +16,8 @@ export default function Home() {
       <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"></link>
       </Head>
       <Header/>
-      <Center  fontSize="6xl" fontWeight="bold" color="white">
-        Registration
-      </Center>
-      <br/>
-      <br/>
-      <Center fontSize="4xl" color="white">
-        Awards for academic excellence
-      </Center>
+      <NavBa/>
+      
       <br/><br/><br/>
       <FormControl >
           <Details id="details" />

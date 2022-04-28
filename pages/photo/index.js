@@ -4,24 +4,21 @@ import {Center, HStack, Box, Divider, Heading, SimpleGrid, GridItem} from "@chak
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Card from './Card';
+import NavBa from '../components/Navba';
 
 export default function Home() {
   
   return (
     <div>
       <Head>
-        <title>Registration- IEI-BLC FCRIT</title>
+        <title>Photo Gallery- IEI-BLC FCRIT</title>
         <meta name="title" content="IEI-BLC FCRIT" />
       </Head>
-      <Header/>
+      <Header/><NavBa/>
       <Center  fontSize="6xl" fontWeight="bold" color="white">
-        Registration
+        Photo Gallery
       </Center>
-      <br/>
-      <br/>
-      <Center fontSize="4xl" color="white">
-        Awards for academic excellence
-      </Center>
+      
       <Center>
         <Heading fontSize="50" fontFamily="fantasy">
           Photo Gallery

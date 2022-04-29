@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack, Menu, MenuButton, MenuList, MenuItemOption, MenuGroup, MenuOptionGroup, MenuDivider, } from "@chakra-ui/react";
-import { ChevronDownIcon,ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import DropdownCategories from "./DropdownCategories";
 const NavBa = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -71,6 +72,9 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem as={Button} bgColor="gray" color={"black"} to="/">
           Home
         </MenuItem>
+
+        
+
         <Menu>
           <MenuButton as={Button} bgColor="gray" color={"black"} rightIcon={<ChevronDownIcon />}>
             Committees
@@ -79,30 +83,39 @@ const MenuLinks = ({ isOpen }) => {
             <MenuItem to="/committees" color={"black"}>Organising Committee </MenuItem>
             <MenuItem to="/committees/adv" color={"black"}>Advisory Committee  </MenuItem>
           </MenuList></Menu>
+
         <Menu>
-        <MenuButton as={Button} bgColor="gray" color={"black"}  rightIcon={<ChevronDownIcon />}>
-        Categories
-        </MenuButton>
-        <MenuList>
-              <MenuItem to="/categories/researchExcellence" color={"black"}>Research Excellence (National/Regional)  </MenuItem>
-              <MenuItem to="/categories/academicExcellence" color={"black"}>Academic Excellence (National/Regional)</MenuItem>
-              <MenuItem to="/categories/industryExcellence" color={"black"}>Industry Excellence Award</MenuItem>
-              <MenuItem to="/categories/startupExcellence" color={"black"}>Startup Excellence Award</MenuItem>
-        </MenuList>
+          <MenuButton as={Button} bgColor="gray" color={"black"} rightIcon={<ChevronDownIcon />}>
+            Categories
+          </MenuButton>
+          <MenuList>
+            <MenuItem to="/categories/researchExcellence" color={"black"}>Research Excellence (National/Regional)  </MenuItem>
+            <MenuItem to="/categories/academicExcellence" color={"black"}>Academic Excellence (National/Regional)</MenuItem>
+            <MenuItem to="/categories/industryExcellence" color={"black"}>Industry Excellence Award</MenuItem>
+            <MenuItem to="/categories/startupExcellence" color={"black"}>Startup Excellence Award</MenuItem>
+          </MenuList>
         </Menu>
+
+        <MenuItem >
+          <DropdownCategories/>
+        </MenuItem>
 
         <MenuItem as={Button} bgColor="gray" color={"black"} to="/imp">
           Imp Dates
         </MenuItem>
+
         <Menu>
-  <MenuButton as={Button} bgColor="gray" color={"black"}  rightIcon={<ChevronDownIcon />}>
-  Registration
-  </MenuButton>
-  <MenuList>
-        <MenuItem to="/categories/generalInstructions" color={"black"}>Instructions </MenuItem>
-        <MenuItem to="/register" color={"black"}>Registration Form</MenuItem>
-  </MenuList>
-</Menu> 
+          <MenuButton as={Button} bgColor="gray" color={"black"} rightIcon={<ChevronDownIcon />}>
+            Registration
+          </MenuButton>
+          <MenuList>
+            <MenuItem to="/categories/generalInstructions" color={"black"}>Instructions </MenuItem>
+            <MenuItem to="/register" color={"black"}>Registration Form</MenuItem>
+          </MenuList>
+        </Menu>
+
+
+
         <MenuItem as={Button} bgColor="gray" color={"black"} to="/photo">
           Photo-Gallery
         </MenuItem>

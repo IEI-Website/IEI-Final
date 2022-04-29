@@ -1,9 +1,11 @@
 var express = require('express')
 var multer = require('multer')
 var cors = require('cors')
+// var nodemon = require
 var fs = require('fs');
+var merge = require('easy-pdf-merge');
 var app = express();
-const merge = require('easy-pdf-merge');
+
 
 var responseNo = 1;
 app.options('*', cors())
@@ -14,12 +16,22 @@ app.use((req, res, next)=>{
   next();
 });
 
-app.post('/upload', (req, res) => {
+
+const upload = multer({ dest: './public/data/uploads/' })
+app.post('/stats', upload.single('uploaded_file'), function (req, res) {
+   // req.file is the name of your file in the form above, here 'uploaded_file'
+   // req.body will hold the text fields, if there were any 
+   console.log(req.file, req.body)
+});
+
+
+
+app.post('/upload' ,(req, res) => {
   console.log("request body : ",req.files);
   const storage = multer.diskStorage({
     
     destination: function (req, file, cb) {
-      const dirName = "/home/kaliappan/Documents/work/college/IEI/IEI-Website/backend/docs/"+Date.now() + '-' + Math.round(Math.random() * 1E9)
+      const dirName = "docs/"+Date.now() + '-' + Math.round(Math.random() * 1E9)
     fs.mkdirSync(dirName);
     console.log(dirName);
       cb(null,dirName);
@@ -43,7 +55,7 @@ app.post('/upload', (req, res) => {
     res.send({"ret":"success"})
     // Everything went fine.
   })
-})
+});
 
 
 
@@ -61,7 +73,7 @@ var storage = multer.diskStorage({
 });
 
 var dir = "public";
-var subDirectory = "public/uploads/";
+var subDirectory = "public/uploads";
 
 if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir);
@@ -71,8 +83,12 @@ if (!fs.existsSync(dir)) {
 
 var mergepdffilesupload = multer({storage:storage})
 
-
+app.get('/test', function(req, res) {
+  res.json({'status':'working'});
+});
 app.post('/mergepdf',mergepdffilesupload.array('userDoc',2),(req,res) => {
+  console.log("post call working")
+  console.log("files",req);
   const files = []
   outputFilePath = dir+"/response/response_"+Date.now()+".pdf";
   responseNo++;
@@ -84,7 +100,7 @@ app.post('/mergepdf',mergepdffilesupload.array('userDoc',2),(req,res) => {
       if (!filePath.endsWith(".pdf")){
         fs.rename(filePath,filePath+".pdf", () => {
           console.log("\nFile Renamed!\n");
-        });        
+        });
         filePath = filePath+".pdf";
       }
       files.push(filePath)
@@ -101,10 +117,9 @@ app.post('/mergepdf',mergepdffilesupload.array('userDoc',2),(req,res) => {
           if (err) {
               return console.log(err)
           }
-          console.log('Success')
+          console.log('Success');
       });
-}
-  });
+}});
 
 var server = app.listen(3000, ()=>{
     console.log("port used", server.address().port);

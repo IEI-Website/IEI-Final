@@ -17,25 +17,25 @@ export default function AwardCategories() {
         var optionsElement = document.getElementById("SelectOptions");
         // uploadElement.style.visibility = "hidden";
         switch (event.target.value) {
-            case "research-N":
+            case "Research Excellence National":
                 optionsElement.style.visibility = "visible";
                 // uploadElement.style.visibility = "visible";
                 ReactDOM.render(<ResearchRolesNational />, document.getElementById("SelectOptions"));
                 break;
 
-            case "research-R":
+            case "Research Excellence Regional":
                 optionsElement.style.visibility = "visible";
                 // uploadElement.style.visibility = "visible";
                 ReactDOM.render(<ResearchRolesRegional />, document.getElementById("SelectOptions"));
                 break;
 
-            case "academic-N":
+            case "Academic Excellence National":
                 optionsElement.style.visibility = "visible";
                 // uploadElement.style.visibility = "visible";
                 ReactDOM.render(<AcademicRolesNational />, document.getElementById("SelectOptions"));
                 break;
 
-            case "academic-R":
+            case "Academic Excellence Regional":
                 optionsElement.style.visibility = "visible";
                 // uploadElement.style.visibility = "visible";
                 ReactDOM.render(<AcademicRolesRegional />, document.getElementById("SelectOptions"));
@@ -48,12 +48,12 @@ export default function AwardCategories() {
             <FormControl>
                 <FormLabel>Select Award Category</FormLabel>
                 <Select id="Category" onChange={onChange}>
-                    <option value="research-N">Research Excellence National</option>
-                    <option value="research-R">Research Excellence Regional</option>
-                    <option value="academic-N">Academic Excellence National</option>
-                    <option value="academic-R">Academic Excellence Regional</option>
-                    <option value="industry">Industry Excellence</option>
-                    <option value="startup">Startup Excellence</option>
+                    <option value="Research Excellence National">Research Excellence National</option>
+                    <option value="Research Excellence Regional">Research Excellence Regional</option>
+                    <option value="Academic Excellence National">Academic Excellence National</option>
+                    <option value="Academic Excellence Regional">Academic Excellence Regional</option>
+                    <option value="Industry Excellence">Industry Excellence</option>
+                    <option value="Startup Excellence">Startup Excellence</option>
                 </Select>
             </FormControl>
     );

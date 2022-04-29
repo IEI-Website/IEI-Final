@@ -28,13 +28,14 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 
-import axios from 'axios'; 
 import { Viewer, ProgressBar } from '@react-pdf-viewer/core';
 import { ViewIcon } from '@chakra-ui/icons';
 import { jsPDF } from "jspdf";
 import $, { merge } from "jquery";
-import { degrees, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 import AwardCategories from './AwardCategories';
+
+
+// const FormData = require('form-data');
 
 const Details = () => {
   // var pdf_file;
@@ -46,74 +47,33 @@ const Details = () => {
   const toast = useToast();
   const [checkVal, setCheckVal] = useState(Boolean(false));
 
-async function mergePDF(urls) {
-  
-  const doc1 = await fetch(urls[0]).then(res => res.arrayBuffer())
 
-  const doc2 = await fetch(urls[1]).then(res => res.arrayBuffer())
-
-  // Load a PDFDocument from each of the existing PDFs
-  const pdf1 = await PDFDocument.load(doc1)
-  const pdf2 = await PDFDocument.load(doc2)
-
-  // Create a new PDFDocument
-  const mergedPdf = await PDFDocument.create();
-
-  const copiedPagesA = await mergedPdf.copyPages(pdf1, pdf1.getPageIndices());
-  copiedPagesA.forEach((page) => mergedPdf.addPage(page));
-
-  const copiedPagesB = await mergedPdf.copyPages(pdf2, pdf2.getPageIndices());
-  copiedPagesB.forEach((page) => mergedPdf.addPage(page));
-
-  // const mergedPdfFile = await mergedPdf.save();
-  // var mergedBlob = mergedPdf.saveAsBlob();
-  console.log(typeof mergedPdf);
-  window.open(URL.createObjectURL(mergedPdf), '_blank');
-  console.log('merged pdf inside mergePDF ',typeof mergedPdf);
-  return mergedPdf;
-  // Trigger the browser to download the PDF document
-  // download(mergedPdfFile, "pdf-lib_page_copying_example.pdf", "application/pdf");
-}
-
-async function modifyPdf(url) {
-  const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
-
-  const pdfDoc = await PDFDocument.load(existingPdfBytes)
-  const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
-
-  const pages = pdfDoc.getPages()
-  const firstPage = pages[0]
-  const { width, height } = firstPage.getSize()
-  firstPage.drawText('This text was added with JavaScript!', {
-    x: 5,
-    y: height / 2 + 300,
-    size: 50,
-    font: helveticaFont,
-    color: rgb(0.95, 0.1, 0.1),
-    rotate: degrees(-45),
-  })
-
-  const pdfBytes = await pdfDoc.save('pdfBytes.pdf')
-  return pdfBytes;
-}
   async function send(){
-    
     var formData = new FormData();
-    formData.append('userDoc',pdfFile);
     formData.append('userDoc', fieldsPdf);
-    
+    formData.append('userDoc',pdfFile);
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data',
-       }
-           }
-       
-    axios.post('http://localhost:3000/mergepdf', formData, config)
-    .then(res => {
-      alert("Form submitted successfully !!!");
-      console.log(JSON.stringify(res.data) + 'this is data after api call');
-   })
-   .catch(err => console.log(err));
+      }
+    }
+
+   
+  fetch('http://localhost:3000/mergepdf', {
+    method: 'POST',
+    body: formData
+ })
+ .then(resp => resp.json())
+ .then(data => {
+    if (data.errors) {
+       alert(data.errors)
+    }
+    else {
+      alert("Form submitted !!! ");
+       console.log(data)
+    }
+ })
+
   }
   const secondaryTextColor = 'black';
 
@@ -128,38 +88,30 @@ async function modifyPdf(url) {
     var dept = $('#department').val();
     var insti = $('#institute').val();
     var award = $('#Category').val();
-    var role = $('#applicant-role').val()
+    var role = $('#SelectOptions').find('#applicant-role').val();
     doc.text(20,20, 'Name : '+name);
     doc.text(20,30,'Semester : '+sem);
     doc.text(20,40,'Department : '+dept);
     doc.text(20,50,'Institute : '+insti);
     doc.text(20,60,'Award Category : '+award);
+    if (!(typeof role ==='undefined')){
     doc.text(20,70,'Applicant Role : '+role);
-    // doc.save('blob.pdf');
-    // doc.output('dataurlnewwindow');
+    }
     var blobPDF =  new Blob([ doc.output('blob',{filename:'userDetails.pdf'}) ], { type : 'application/pdf'});
     var blobUrl = URL.createObjectURL(blobPDF);
     setFieldsPdf(blobPDF);
     setFieldsUrl(blobUrl);
-    
   }
   const checkBoxChange = (e) =>{
     e.preventDefault();
     setCheckVal(!checkVal);
-    // if (checkVal == 0){
-    //   setCheckVal(1);
-    // }
-    // else if (checkVal==1){
-    //   setCheckVal(0);
-    // }
-    console.log("check value : ",checkVal);
   }
 
 
   return (
     <Box >
        <Center backgroundColor="whiteAlpha.800" padding="10px" spacing={10} alignItems="center" >
-      <form id='registration-form'>
+      <form id='registration-form' >
       <SimpleGrid boxShadow="dark-lg" borderColor="black" borderEnd="ActiveBorder" spacing="10px" padding="50px" border="2px" columns={1} rowGap={6} >
         <GridItem>
         <Heading textColor={secondaryTextColor} size="2xl">Registration Form</Heading>
@@ -246,7 +198,7 @@ async function modifyPdf(url) {
         </GridItem>
 
           <br></br>
-          <Button mt="5" mb="5" bgColor="green.500"  onClick={send} size="lg" >
+          <Button mt="5" type='submit' mb="5" bgColor="green.500"  onClick={send} size="lg" >
             Submit
           </Button>
          </GridItem>

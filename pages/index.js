@@ -48,8 +48,8 @@ export default function Home() {
       </Center>
       <br/>
       <Center  fontSize="3xl" color="black">
-        <Image src="/fcritlogo.png"width={200} height={200} />
         <Image src="/iei.png"width={200} height={200} />
+        <Image src="/fcritlogo.png"width={200} height={200} />
       </Center>
       <br/>
       <Center fontSize="4xl" color="black">

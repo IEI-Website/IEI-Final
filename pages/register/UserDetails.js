@@ -119,28 +119,28 @@ const Details = () => {
         </GridItem>
         <GridItem colSpan={2}>
           <FormControl isRequired>
-            <FormLabel textColor={secondaryTextColor}>Name</FormLabel>
+            <FormLabel textColor={secondaryTextColor}>Name of the Applicant</FormLabel>
             <Input id="name" placeholder="ABC" />
           </FormControl>
         </GridItem>
 
         <GridItem colSpan={2}>
           <FormControl isRequired>
-            <FormLabel textColor={secondaryTextColor}>Department Name</FormLabel>
+            <FormLabel textColor={secondaryTextColor}>Department Name of the Applicant</FormLabel>
             <Input id='department' placeholder="Computer" />
           </FormControl>
         </GridItem>
 
         <GridItem colSpan={2}>
           <FormControl isRequired>
-            <FormLabel textColor={secondaryTextColor} >Institute Name</FormLabel>
+            <FormLabel textColor={secondaryTextColor} >Institute Name of Applicant</FormLabel>
             <Input id='institute' placeholder="FCRIT"/>
           </FormControl>
         </GridItem>
 
         <GridItem colSpan={2}>
           <FormControl >
-            <FormLabel textColor={secondaryTextColor} >Semester</FormLabel>
+            <FormLabel textColor={secondaryTextColor} >Semester (applicable only for students)</FormLabel>
             <Input id='sem' placeholder="6" />
           </FormControl>
         </GridItem>

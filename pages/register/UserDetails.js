@@ -198,7 +198,7 @@ const Details = () => {
         </GridItem>
 
           <br></br>
-          <Button mt="5" type='submit' mb="5" bgColor="green.500"  onClick={send} size="lg" >
+          <Button mt="5" mb="5" bgColor="green.500"  onClick={send} size="lg" >
             Submit
           </Button>
          </GridItem>

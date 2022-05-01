@@ -79,12 +79,12 @@ const MenuLinks = ({ isOpen }) => {
           <MenuButton as={Button} bgColor="gray" color={"black"} rightIcon={<ChevronDownIcon />}>
             Committees
           </MenuButton>
-          <MenuList>
-            <MenuItem to="/committees" color={"black"}>Organising Committee </MenuItem>
-            <MenuItem to="/committees/adv" color={"black"}>Advisory Committee  </MenuItem>
+          <MenuList  minWidth='240px' color={"black"} bgColor="gray.100">
+            <MenuItem align ="center"to="/committees"  color={"black"}>Organising Committee </MenuItem>
+            <MenuItem align ="center"to="/committees/adv" color={"black"}>Advisory Committee  </MenuItem>
           </MenuList></Menu>
 
-        <Menu>
+        {/* <Menu>
           <MenuButton as={Button} bgColor="gray" color={"black"} rightIcon={<ChevronDownIcon />}>
             Categories
           </MenuButton>
@@ -94,12 +94,52 @@ const MenuLinks = ({ isOpen }) => {
             <MenuItem to="/categories/industryExcellence" color={"black"}>Industry Excellence Award</MenuItem>
             <MenuItem to="/categories/startupExcellence" color={"black"}>Startup Excellence Award</MenuItem>
           </MenuList>
+        </Menu> */}
+        <Menu>
+          <MenuButton as={Button} bgColor="gray" color={"black"} rightIcon={<ChevronDownIcon />}>
+            Categories
+          </MenuButton>
+          <MenuList minWidth='240px' color={"black"} bgColor="gray.100">
+          <MenuOptionGroup defaultValue='asc' title='Research Excellence' type='radio'>
+            <MenuOptionGroup defaultValue='asc' title='Regional' type='radio'>
+            <MenuItem  align="center" to='/categories/researchExcellenceStudent' value='desc'>Students</MenuItem>
+            <MenuItem align="center" to='/categories/researchExcellenceTeacher' value='asc'>Teaching Faculty</MenuItem>
+            </MenuOptionGroup>
+            <MenuOptionGroup defaultValue='asc' title='National' type='radio'>
+            <MenuItem align="center" to='/categories/researchExcellenceStudent' value='desc'>Students</MenuItem>
+            <MenuItem align="center" to='/categories/researchExcellenceTeacher' value='asc'>Teaching Faculty</MenuItem>
+            <MenuItem align="center" to='/categories/researchExcellenceIndustry' value='desc'>Researchers</MenuItem>
+            </MenuOptionGroup>
+            
+          </MenuOptionGroup>
+          <MenuDivider />
+          <MenuOptionGroup title='Academic Excellence' type='checkbox'>
+          <MenuOptionGroup defaultValue='asc' title='Regional' type='radio'>
+            <MenuItem  align="center" to='/categories/academicExcellenceStudent' value='desc'>Students</MenuItem>
+            <MenuItem align="center" to='/categories/academicExcellenceTeacher' value='asc'>Teaching Faculty</MenuItem>
+            <MenuItem align="center" to='/categories/academicExcellenceHOD' value='desc'>Head of the Department</MenuItem>
+            <MenuItem align="center" to='/categoriesacademicExcellencePrincipal' value='asc'>Principal/Director</MenuItem>
+            <MenuItem align="center" to='/categories/academicExcellenceInstitute' value='desc'>Institute</MenuItem>
+            </MenuOptionGroup>
+            <MenuOptionGroup defaultValue='asc' title='National' type='radio'>
+            <MenuItem  align="center" to='/categories/academicExcellenceStudent' value='desc'>Students</MenuItem>
+            <MenuItem align="center" to='/categories/academicExcellenceTeacher' value='asc'>Teaching Faculty</MenuItem>
+            <MenuItem align="center" to='/categories/academicExcellenceHOD' value='desc'>Head of the Department</MenuItem>
+            <MenuItem align="center" to='/categories/academicExcellencePrincipal' value='asc'>Principal/Director</MenuItem>
+            <MenuItem align="center" to='/categories/academicExcellenceInstitute' value='desc'>Institute</MenuItem>
+            </MenuOptionGroup>
+          </MenuOptionGroup>
+          <MenuDivider />
+          <MenuOptionGroup defaultValue='asc' title='Industry Excellence Award' type='radio'>
+          <MenuItem align ="center" to="/categories/industryExcellence" color={"black"}>Industry Excellence Award</MenuItem>
+          </MenuOptionGroup>
+          <MenuDivider />
+          <MenuOptionGroup defaultValue='asc' title='Industry Excellence Award' type='radio'>
+          <MenuItem align ="center"to="/categories/startupExcellence" color={"black"}>Startup Excellence Award</MenuItem>
+          </MenuOptionGroup>
+          </MenuList>
         </Menu>
-
-        <MenuItem >
-          <DropdownCategories/>
-        </MenuItem>
-
+        
         <MenuItem as={Button} bgColor="gray" color={"black"} to="/imp">
           Imp Dates
         </MenuItem>
@@ -108,9 +148,11 @@ const MenuLinks = ({ isOpen }) => {
           <MenuButton as={Button} bgColor="gray" color={"black"} rightIcon={<ChevronDownIcon />}>
             Registration
           </MenuButton>
-          <MenuList>
-            <MenuItem to="/categories/generalInstructions" color={"black"}>Instructions </MenuItem>
-            <MenuItem to="/register" color={"black"}>Registration Form</MenuItem>
+          <MenuList minWidth='240px' color={"black"} bgColor="gray.100">
+            <MenuItem align ="center"to="/categories/generalInstructions" color={"black"}>Instructions </MenuItem>
+            <MenuItem align ="center"to="/register/regdet" color={"black"}>Registration Details </MenuItem>
+            <MenuItem align ="center"to="/register" color={"black"}>Registration Form</MenuItem>
+            <MenuItem align ="center"to="/register" color={"black"}>Payment Details</MenuItem>
           </MenuList>
         </Menu>
 

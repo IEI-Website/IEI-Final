@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
+import { Link, Box, Flex, Text, Heading, Stack } from "@chakra-ui/react";
 import Logo from "./Logo";
 import Logos from "./Logos";
 
@@ -14,12 +14,14 @@ const NavBar = (props) => {
       <Logo/>
       {/* <Text fontWeight={"bold"}><p align="center" >IEI</p></Text> */}
       <div className="main-text" align="center" >
-        <Text marginStart={"100"} fontSize={"2xl"} fontWeight={"bold"} color="black" align={"center"}> The Institution of Engineers (India)  Organises </Text>
-        <Text marginStart={"100"}fontSize={"2xl"} fontWeight={"bold"} color="black" align={"center"}> IEI Excellence Awards 2022</Text>
-        {/* <Text fontWeight={"bold"} color="black" align={"center"}>Vibration Engineering, Science, and Technology (INVEST 22)</Text> */}
-        <Text marginStart={"100"}fontWeight={"bold"} color="black" align={"center"}> ---------------------------------------------------------------------------------------------------------</Text>
-        <Text marginStart={"100"}fontWeight={"bold"} color="black" align={"center"}>Jointly organised by the IEI-BLC & Fr. C. Rodrigues Institute of Technology, Vashi</Text>
-        <Text marginStart={"100"}fontWeight={"bold"} color="black" align={"center"}>     September 15, 2022  </Text>
+      <Heading marginStart={"100"} fontSize={"3xl"} fontWeight={"bold"} color="black" align={"center"}> The Institution of Engineers (India) </Heading>
+      <Text marginStart={"100"} fontSize={"2xl"} fontWeight={"bold"} color="blueviolet" align={"center"}> Belapur Local Centre </Text>
+      {/* <Text fontWeight={"bold"} color="black" align={"center"}>Vibration Engineering, Science, and Technology (INVEST 22)</Text> */}
+      <Text marginStart={"100"} fontSize={"2xl"} fontWeight={"bold"} color="black" align={"center"}>And</Text>
+        <Text marginStart={"100"} fontSize={"2xl"} fontWeight={"bold"} color="black" align={"center"}>Agnel Charities'
+Fr. C. Rodrigues Institute of Technology</Text>
+        <Text marginStart={"100"} fontSize={"2xl"} fontWeight={"bold"} color="black" align={"center"}>Jointly Presents</Text>
+        <Heading color="blue.800" marginStart={"100"} fontSize="5xl" fontWeight="extrabold" align="center">IEI BLC - FCRIT EXCELLENCE AWARDS</Heading>
       </div>
       <Logos />
       <MenuLinks isOpen={isOpen} />

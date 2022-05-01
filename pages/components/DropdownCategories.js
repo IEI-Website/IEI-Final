@@ -13,9 +13,9 @@ import { Box, Link } from '@chakra-ui/react';
 
 const DropdownCategories = () => {
     return (
-        <Box bgColor="gray" color={"black"}>
-            <Dropdown autoOpen={true}>
-                <DropdownToggle title="Categories" />
+        // <Box bgColor="gray" color={"black"}>
+            <Dropdown  autoOpen={true}>
+                <DropdownToggle color={"gray"} title="Categories" />
                 <DropdownMenu>
 
 
@@ -164,7 +164,7 @@ const DropdownCategories = () => {
 
                 </DropdownMenu>
             </Dropdown>
-        </Box>
+        // </Box>
     );
 };
 

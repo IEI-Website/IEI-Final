@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import {Center} from "@chakra-ui/react";
+import {Center,Text} from "@chakra-ui/react";
 import VideoBackground from '../components/VideoBackground';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -15,18 +15,13 @@ export default function Home() {
       </Head>
       <VideoBackground />
       <Header/><NavBa />
-      <Center  fontSize="6xl" fontWeight="bold" color="white">
+      <Center  fontSize="6xl" fontWeight="bold" color="black">
         Important Dates
       </Center>
       <br/>
-      <Center  fontSize="3xl" color="white">
-        <Image src="/fcritlogo.png"width={200} height={200} />
-        <Image src="/iei.png"width={200} height={200} />
-      </Center>
-      <br/>
-      <Center fontSize="4xl" color="white">
-        Awards for academic excellence
-      </Center>
+      <Center fontSize={"2xl"} fontWeight="bold">Opening Date: 5th May 2022</Center><br/>
+      <Center fontSize={"2xl"}fontWeight="bold">Closing Date: 30th June 2022</Center><br/>
+      <Center fontSize={"2xl"}fontWeight="bold">Award Ceremony: 15th September 2022</Center><br/>
       <br/><br/><br/>
       <Footer/>
     </div>

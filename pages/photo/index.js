@@ -38,7 +38,8 @@ export default function Home() {
       </HStack>
       <br />
       <br />
-      <Carousel height={'20px'} marginRight={"20px"} >
+      <Center>
+      <Carousel width={'1150px'}  >
         <div>
           <img src="/photos/awards1.jpeg" alt="image1" />
           <p className="legend">Image 1</p>
@@ -72,6 +73,7 @@ export default function Home() {
           <p className="legend">Image 8</p>
         </div>
       </Carousel>
+      </Center>
 <br/>
 <br/>
 <br/>

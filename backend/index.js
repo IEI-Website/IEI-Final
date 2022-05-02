@@ -85,14 +85,17 @@ var mergepdffilesupload = multer({storage:storage})
 
 app.get('/test', function(req, res) {
   res.json({'status':'working'});
+  res.status(200)
 });
 app.post('/mergepdf',mergepdffilesupload.array('userDoc',2),(req,res) => {
   console.log("post call working")
-  console.log("files",req);
+  // console.log("files",req);
+
   const files = []
   outputFilePath = dir+"/response/response_"+Date.now()+".pdf";
   responseNo++;
-  if(req.files){
+  if(req.files && req.files.length==2){
+
     req.files.forEach(file => {
       console.log(file.path)
       var filePath = file.path;
@@ -109,17 +112,29 @@ app.post('/mergepdf',mergepdffilesupload.array('userDoc',2),(req,res) => {
       merge(files,outputFilePath, function (err) {
           files.forEach(file => {
         fs.unlink(file, function (err) {
-          if (err) throw err;
+          if (err){ 
+            res.status(404).json({error:'Improper files received!'});
+            throw err;
+          }
           // if no error, file has been deleted successfully
           console.log('File deleted!');
         });
         });
           if (err) {
+            res.status(404).json({error:'File handling error!'});
               return console.log(err)
           }
-          console.log('Success');
+          else{
+            console.log('Success');
+            res.status(202).json({mssg:'Response recorded successfully'});
+          }
       });
-}});
+     
+}
+else{
+res.status(404).json({error: 'Invalid request'});
+}
+});
 
 var server = app.listen(3000, ()=>{
     console.log("port used", server.address().port);

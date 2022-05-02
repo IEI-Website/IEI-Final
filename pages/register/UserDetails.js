@@ -4,6 +4,10 @@ import {
   Input,
   VStack,
   Heading,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
   Text,
   SimpleGrid,
   Box,
@@ -13,9 +17,8 @@ import {
   Checkbox,
   Button,
   useToast,
-} from '@chakra-ui/react';
-import { useState } from 'react';
-
+} from "@chakra-ui/react";
+import { useState } from "react";
 
 import {
   Modal,
@@ -25,187 +28,269 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure
-} from '@chakra-ui/react';
+  useDisclosure,
+} from "@chakra-ui/react";
 
-import { Viewer, ProgressBar } from '@react-pdf-viewer/core';
-import { ViewIcon } from '@chakra-ui/icons';
+import { ViewIcon } from "@chakra-ui/icons";
 import { jsPDF } from "jspdf";
 import $, { merge } from "jquery";
-import AwardCategories from './AwardCategories';
-
+import AwardCategories from "./AwardCategories";
 
 // const FormData = require('form-data');
 
 const Details = () => {
   // var pdf_file;
-  const [pdfFile,setPdfFile] = useState(null);
+  const [pdfFile, setPdfFile] = useState(null);
   const [fieldsPdf, setFieldsPdf] = useState(null);
-  const [pdfUrl,setPdfUrl] = useState(null);
+  const [pdfUrl, setPdfUrl] = useState(null);
   const [fieldsUrl, setFieldsUrl] = useState(null);
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
   const [checkVal, setCheckVal] = useState(Boolean(false));
-
-
-  async function send(){
+  const { isSubmitted, onFormSubmit } = useDisclosure({ defaultIsOpen: false });
+  function handleErrors(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+  }
+  async function send() {
     var formData = new FormData();
-    formData.append('userDoc', fieldsPdf);
-    formData.append('userDoc',pdfFile);
+    formData.append("userDoc", fieldsPdf);
+    formData.append("userDoc", pdfFile);
     const config = {
       headers: {
-        'Content-Type': 'multipart/form-data',
+        "Content-Type": "multipart/form-data",
+      },
+    };
+    try{
+    const response = await fetch("http://localhost:3000/mergepdf", {
+      method: "POST",
+      body: formData,
+    })
+    .then(res =>{
+      if (res.status!=202){
+        alert("Please Resubmit Form!!!")
+        console.log("Error",res.json())
       }
-    }
-
-   
-  fetch('http://localhost:3000/mergepdf', {
-    method: 'POST',
-    body: formData
- })
- .then(resp => resp.json())
- .then(data => {
-    if (data.errors) {
-       alert(data.errors)
-    }
-    else {
-      alert("Form submitted !!! ");
-       console.log(data)
-    }
- })
-
+      else{
+        alert("Form submitted Successfully !!!")
+        console.log("Success", res.json())
+        window.location.reload(false); 
+      }
+    });
+    // console.log(response.json());
+    // if (response.status == 202) {
+    //   alert("Form submitted Successfully !!!")
+    //   const jsonResponse = await response.json();
+    //   console.log(jsonResponse);
+    // } else {
+    //   alert("Please resubmit the form")
+    //   // Handle errors
+    //   console.log(response.status, response.statusText);
+    // }
   }
-  const secondaryTextColor = 'black';
+  catch (err) {
+    alert("Backend is Down. Contact Administrator")
+    console.log(err);
+  }
+    
+    // .catch((x) => {
+    //   console.error(x);
+    // });
+    // .then((data) => {
+    //     if (data.errors) {
+    //       alert(data.errors);
+    //     } else {
+    //       alert("Form submitted !!! ");
+    //       console.log(data);
+    //     }
+    //   });
+  }
+  const secondaryTextColor = "black";
 
   const handleChange = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     var pdf_file = e.target.files[0];
     setPdfFile(pdf_file);
-    setPdfUrl(URL.createObjectURL(pdf_file))
-    var doc =  jsPDF();
-    var name = $('#name').val();
-    var sem = $('#sem').val();
-    var dept = $('#department').val();
-    var insti = $('#institute').val();
-    var award = $('#Category').val();
-    var role = $('#SelectOptions').find('#applicant-role').val();
-    doc.text(20,20, 'Name : '+name);
-    doc.text(20,30,'Semester : '+sem);
-    doc.text(20,40,'Department : '+dept);
-    doc.text(20,50,'Institute : '+insti);
-    doc.text(20,60,'Award Category : '+award);
-    if (!(typeof role ==='undefined')){
-    doc.text(20,70,'Applicant Role : '+role);
+    setPdfUrl(URL.createObjectURL(pdf_file));
+    var doc = jsPDF();
+    var name = $("#name").val();
+    var sem = $("#sem").val();
+    var dept = $("#department").val();
+    var insti = $("#institute").val();
+    var award = $("#Category").val();
+    var role = $("#SelectOptions").find("#applicant-role").val();
+    doc.text(20, 20, "Name : " + name);
+    doc.text(20, 30, "Semester : " + sem);
+    doc.text(20, 40, "Department : " + dept);
+    doc.text(20, 50, "Institute : " + insti);
+    doc.text(20, 60, "Award Category : " + award);
+    if (!(typeof role === "undefined")) {
+      doc.text(20, 70, "Applicant Role : " + role);
     }
-    var blobPDF =  new Blob([ doc.output('blob',{filename:'userDetails.pdf'}) ], { type : 'application/pdf'});
+    var blobPDF = new Blob(
+      [doc.output("blob", { filename: "userDetails.pdf" })],
+      { type: "application/pdf" }
+    );
     var blobUrl = URL.createObjectURL(blobPDF);
     setFieldsPdf(blobPDF);
     setFieldsUrl(blobUrl);
-  }
-  const checkBoxChange = (e) =>{
+  };
+  const checkBoxChange = (e) => {
     e.preventDefault();
     setCheckVal(!checkVal);
-  }
-
+  };
 
   return (
-    <Box >
-       <Center backgroundColor="whiteAlpha.800" padding="10px" spacing={10} alignItems="center" >
-      <form id='registration-form' >
-      <SimpleGrid boxShadow="dark-lg" borderColor="black" borderEnd="ActiveBorder" spacing="10px" padding="50px" border="2px" columns={1} rowGap={6} >
-        <GridItem>
-        <Heading textColor={secondaryTextColor} size="2xl">Registration Form</Heading>
-        <Text textColor={secondaryTextColor}>Please make sure you upload all the necessary Documents before submitting the form.</Text>
-        </GridItem>
-        <GridItem colSpan={2}>
-          <FormControl isRequired>
-            <FormLabel textColor={secondaryTextColor}>Name of the Applicant</FormLabel>
-            <Input id="name" placeholder="ABC" />
-          </FormControl>
-        </GridItem>
+    <Box>
+      <Center
+        backgroundColor="whiteAlpha.800"
+        padding="10px"
+        spacing={10}
+        alignItems="center"
+      >
+        <form id="registration-form">
+          <SimpleGrid
+            boxShadow="dark-lg"
+            borderColor="black"
+            borderEnd="ActiveBorder"
+            spacing="10px"
+            padding="50px"
+            border="2px"
+            columns={1}
+            rowGap={6}
+          >
+            <GridItem>
+              <Heading textColor={secondaryTextColor} size="2xl">
+                Registration Form
+              </Heading>
+              <Text textColor={secondaryTextColor}>
+                Please make sure you upload all the necessary Documents before
+                submitting the form.
+              </Text>
+            </GridItem>
+            <GridItem colSpan={2}>
+              <FormControl isRequired>
+                <FormLabel textColor={secondaryTextColor}>
+                  Name of the Applicant
+                </FormLabel>
+                <Input id="name" placeholder="ABC" />
+              </FormControl>
+            </GridItem>
 
-        <GridItem colSpan={2}>
-          <FormControl isRequired>
-            <FormLabel textColor={secondaryTextColor}>Department Name of the Applicant</FormLabel>
-            <Input id='department' placeholder="Computer" />
-          </FormControl>
-        </GridItem>
+            <GridItem colSpan={2}>
+              <FormControl isRequired>
+                <FormLabel textColor={secondaryTextColor}>
+                  Department Name of the Applicant
+                </FormLabel>
+                <Input id="department" placeholder="Computer" />
+              </FormControl>
+            </GridItem>
 
-        <GridItem colSpan={2}>
-          <FormControl isRequired>
-            <FormLabel textColor={secondaryTextColor} >Institute Name of Applicant</FormLabel>
-            <Input id='institute' placeholder="FCRIT"/>
-          </FormControl>
-        </GridItem>
+            <GridItem colSpan={2}>
+              <FormControl isRequired>
+                <FormLabel textColor={secondaryTextColor}>
+                  Institute Name of Applicant
+                </FormLabel>
+                <Input id="institute" placeholder="FCRIT" />
+              </FormControl>
+            </GridItem>
 
-        <GridItem colSpan={2}>
-          <FormControl >
-            <FormLabel textColor={secondaryTextColor} >Semester (applicable only for students)</FormLabel>
-            <Input id='sem' placeholder="6" />
-          </FormControl>
-        </GridItem>
-        <GridItem colSpan={2}>
-          <AwardCategories />
-        </GridItem>
-        
-        <GridItem id="SelectOptions" colSpan={2}>
-          
-        </GridItem>
-        
-         <GridItem colSpan={1}>
-           <FormControl isRequired>
-          <FormLabel>Upload all documents as a single pdf here</FormLabel>
-          <input accept="application/pdf" type="file" id="userDoc" onChange={handleChange} />
-          <br></br>
-          <Button mt="5" mb="5" size="lg" onClick={() => {
-            if(pdfUrl === null) {
-              toast({
-                title: 'PDF has not been uploaded yet!',
-                description: "Please upload PDF for Preview",
-                status: 'info',
-                duration: 3000,
-                isClosable: true,
-              })
-            } else {
-              onOpen()
-            }
-            }} >
-            Preview&nbsp;&nbsp;<ViewIcon />
-          </Button>
-          </FormControl>
-          <br></br>
-          <Modal isOpen={isOpen} onClose={onClose} size="2xl" scrollBehavior="inside">
-            <ModalOverlay />
-            <ModalContent>
-              <ModalHeader>PDF Document Preview</ModalHeader>
-              <ModalCloseButton />
-              <ModalBody>
-                <iframe src={pdfUrl} width="500px" height="700px" />
-              </ModalBody>
+            <GridItem colSpan={2}>
+              <FormControl>
+                <FormLabel textColor={secondaryTextColor}>
+                  Semester (applicable only for students)
+                </FormLabel>
+                <Input id="sem" placeholder="6" />
+              </FormControl>
+            </GridItem>
+            <GridItem colSpan={2}>
+              <AwardCategories />
+            </GridItem>
 
-              <ModalFooter>
-                <Button colorScheme='blue' mr={3} onClick={onClose}>
-                  Close
+            <GridItem id="SelectOptions" colSpan={2}></GridItem>
+
+            <GridItem colSpan={1}>
+              <FormControl isRequired={true}>
+                <FormLabel>Upload all documents as a single pdf here</FormLabel>
+                <Input
+                isRequired
+                  accept="application/pdf"
+                  type="file"
+                  id="userDoc"
+                  onChange={handleChange}
+                />
+                <br></br>
+                <Button
+                  mt="5"
+                  mb="5"
+                  size="lg"
+                  onClick={() => {
+                    if (pdfUrl === null) {
+                      toast({
+                        title: "PDF has not been uploaded yet!",
+                        description: "Please upload PDF for Preview",
+                        status: "info",
+                        duration: 3000,
+                        isClosable: true,
+                      });
+                    } else {
+                      onOpen();
+                    }
+                  }}
+                >
+                  Preview&nbsp;&nbsp;
+                  <ViewIcon />
                 </Button>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
+              </FormControl>
+              <br></br>
+              <Modal
+                isOpen={isOpen}
+                onClose={onClose}
+                size="2xl"
+                scrollBehavior="inside"
+              >
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>PDF Document Preview</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
+                    <iframe src={pdfUrl} width="500px" height="700px" />
+                  </ModalBody>
 
-        <GridItem colSpan={2}>
-          <FormControl isRequired>
-          <Checkbox onChange={checkBoxChange} >I have checked all the details. I confirm that the details are true and I have uploaded all the documents.</Checkbox>
-          </FormControl>
-        </GridItem>
+                  <ModalFooter>
+                    <Button colorScheme="blue" mr={3} onClick={onClose}>
+                      Close
+                    </Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
 
-          <br></br>
-          <Button mt="5" mb="5" bgColor="green.500"  onClick={send} size="lg" >
-            Submit
-          </Button>
-         </GridItem>
-         <br/> 
-      </SimpleGrid>
-      </form>
-    </Center>
+              <GridItem colSpan={2}>
+                <FormControl isRequired>
+                  <Checkbox onChange={checkBoxChange}>
+                    I have checked all the details. I confirm that the details
+                    are true and I have uploaded all the documents.
+                  </Checkbox>
+                </FormControl>
+              </GridItem>
+
+              <br></br>
+              <Button
+                mt="5"
+                mb="5"
+                bgColor="green.500"
+                onClick={send}
+                size="lg"
+              >
+                Submit
+              </Button>
+            </GridItem>
+            <br />
+          </SimpleGrid>
+        </form>
+      </Center>
     </Box>
   );
 };

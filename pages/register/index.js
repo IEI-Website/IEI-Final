@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Details from './UserDetails.js';
 import NavBa from '../components/Navba';
-import Form from './Form';
 
 export default function Home() {
   
@@ -21,7 +20,6 @@ export default function Home() {
       <NavBa/>
       
       <br/><br/><br/>
-      {/* <Form /> */}
       <FormControl >
           <Details id="details" />
       </FormControl>    

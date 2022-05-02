@@ -8,7 +8,7 @@ export default function ResearchRolesNational() {
 
     return (
         <div>
-            <FormControl>
+            <FormControl isRequired>
                 <FormLabel>Select your Role</FormLabel>
                 <Select id="applicant-role" >
                     <option value="Student">Student</option>

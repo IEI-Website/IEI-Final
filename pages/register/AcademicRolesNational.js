@@ -9,7 +9,7 @@ export default function AcademicRolesNational() {
 
     return (
         <div>
-            <FormControl>
+            <FormControl isRequired>
                 <FormLabel>Select your Role</FormLabel>
                 <Select id="applicant-role">
                     <option value="Student">Student</option>

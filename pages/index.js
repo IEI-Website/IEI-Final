@@ -49,8 +49,16 @@ export default function Home() {
       
       
       <br/><br/><br/>
-      <Flex marginRight={"20px"}>
-        <Carousel width={"122.5%"} marginRight={"20px"} >
+      <Flex overflow={'hidden'} alignContent={'center'}  height={'400px'} marginRight={"full"}>
+        <Carousel width={'100%'} marginRight={"20px"} >
+        <div>
+              <img height={'5vh'} src="/monument.jpg" alt="image1"/>
+                <p className="legend">Image 1</p>
+          </div>
+          <div>
+              <img height={'fit'} src="/iei-BLC.jpg" alt="image1"/>
+                <p className="legend">Image 1</p>
+          </div>
           <div>
               <img src="/1.jpg" alt="image1"/>
                 <p className="legend">Image 1</p>
@@ -64,7 +72,7 @@ export default function Home() {
                 <p className="legend">Image 3</p>
           </div>
           <div>
-            <img src="/4.jpg" alt="image4"/>
+            <img  src="/4.jpg" alt="image4"/>
             <p className="legend">Image 4</p>
           </div>
         </Carousel>

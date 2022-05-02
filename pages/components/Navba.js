@@ -80,8 +80,8 @@ const MenuLinks = ({ isOpen }) => {
             Committees
           </MenuButton>
           <MenuList  minWidth='240px' color={"black"} bgColor="gray.100">
-            <MenuItem align ="center"to="/committees"  color={"black"}>Organising Committee </MenuItem>
             <MenuItem align ="center"to="/committees/adv" color={"black"}>Advisory Committee  </MenuItem>
+            <MenuItem align ="center"to="/committees"  color={"black"}>Organising Committee </MenuItem>
           </MenuList></Menu>
 
         {/* <Menu>

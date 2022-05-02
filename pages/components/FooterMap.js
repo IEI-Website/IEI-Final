@@ -26,7 +26,7 @@ const FooterMap = () => {
 
     return (
         <LoadScript
-            googleMapsApiKey="AIzaSyCl4O9C6gMwnS14nevhZFCSYreiFLYDV6k"
+            googleMapsApiKey="AIzaSyCJ1ZMYs2BgNz_VI3_KzP5vTInG5xpxHKM"
         >
             <GoogleMap
                 mapContainerStyle={containerStyle}

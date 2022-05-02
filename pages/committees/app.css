@@ -10,6 +10,7 @@
     border: 2px solid rgb(34, 60, 139);
     width: 1000px;
     height: 200px;
+    border-collapse: collapse;
     }
     
     th {
@@ -22,3 +23,7 @@
     font-size: large;
     }
     
+    tr{
+    border: solid;
+    border-width: 1px 0;
+    }

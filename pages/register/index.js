@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import {Center, FormControl, FormLabel, Input, VStack, Button} from "@chakra-ui/react";
+import {Box,Heading} from "@chakra-ui/react";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Details from './UserDetails.js';
@@ -17,11 +17,12 @@ export default function Home() {
       </Head>
       <Header/>
       <NavBa/>
-      
       <br/><br/><br/>
-      <FormControl >
-          <Details id="details" />
-      </FormControl>    
+      <Box height={'30%'} padding={'200'}>
+        <Heading>
+          Registration will Open Soon
+        </Heading>
+      </Box>
     <Footer/>
     </div>
 

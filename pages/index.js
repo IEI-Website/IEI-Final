@@ -49,31 +49,15 @@ export default function Home() {
       
       
       <br/><br/><br/>
-      <Flex overflow={'hidden'} alignContent={'center'}  height={'400px'} marginRight={"full"}>
-        <Carousel width={'100%'} marginRight={"20px"} >
+      <Flex overflow={'hidden'}  alignContent={'center'} marginRight={"full"}>
+        <Carousel width={'100%'} >
         <div>
-              <img height={'5vh'} src="/monument.jpg" alt="image1"/>
-                <p className="legend">Image 1</p>
+              <img  src="/monument2.jpg" alt="image1"/>
+                <p className="legend">IEI-BLC</p>
           </div>
           <div>
-              <img height={'fit'} src="/iei-BLC.jpg" alt="image1"/>
-                <p className="legend">Image 1</p>
-          </div>
-          <div>
-              <img src="/1.jpg" alt="image1"/>
-                <p className="legend">Image 1</p>
-          </div>
-          <div>
-            <img src="/2.jpg" alt="image2" />
-            <p className="legend">Image 2</p>
-          </div>
-          <div>
-            <img src="/3.jpg" alt="image3"/>
-                <p className="legend">Image 3</p>
-          </div>
-          <div>
-            <img  src="/4.jpg" alt="image4"/>
-            <p className="legend">Image 4</p>
+            <img className='carousel-img' src="/2.jpg" alt="image2" />
+            <p className="legend">FCRIT, Vashi</p>
           </div>
         </Carousel>
         </Flex>

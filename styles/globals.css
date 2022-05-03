@@ -19,6 +19,13 @@ a {
   height: 600px;
 } */
 
+.carousel-img{
+  width: auto;
+  height: 75vh;
+  background-color: black;
+  /* object-fit: scale-down; */
+}
+
 * {
   box-sizing: border-box;
 }

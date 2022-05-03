@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, Box, Flex, Text, Heading, Stack } from "@chakra-ui/react";
+import { Link, Box,Head, Flex, Text, Heading, Stack } from "@chakra-ui/react";
 import Logo from "./Logo";
 import Logos from "./Logos";
+
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -9,12 +10,12 @@ const NavBar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
+    
     <NavBarContainer {...props}>
-      
       <Logo/>
       {/* <Text fontWeight={"bold"}><p align="center" >IEI</p></Text> */}
       <div className="main-text" align="center" >
-      <Heading marginStart={"100"} fontSize={"3xl"} fontWeight={"bold"} color="black" align={"center"}> The Institution of Engineers (India) </Heading>
+      <Heading marginStart={"100"} fontSize={"5xl"} fontFamily={"'Cloister black',sans-serif"}  color="black" align={"center"}> The Institution of Engineers (India) </Heading>
       <Text marginStart={"100"} fontSize={"2xl"} fontWeight={"bold"} color="blueviolet" align={"center"}> Belapur Local Centre </Text>
       {/* <Text fontWeight={"bold"} color="black" align={"center"}>Vibration Engineering, Science, and Technology (INVEST 22)</Text> */}
       <Text marginStart={"100"} fontSize={"2xl"} fontWeight={"bold"} color="black" align={"center"}>And</Text>

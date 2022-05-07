@@ -9,7 +9,11 @@ import Link from 'next/link';
 import NavBa from '../components/Navba';
 const researchExcellence = () => {
     return (
-        <div>
+        <div><Head>
+            <title>Categories- IEI-BLC FCRIT</title>
+            <meta name="title" content="IEI-BLC FCRIT" />
+
+        </Head>
             <Header /><NavBa />
 
             <Text fontSize="xl" color="black" marginStart={""}>

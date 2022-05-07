@@ -10,6 +10,11 @@ import NavBa from '../components/Navba';
 const researchExcellence = () => {
     return (
         <div>
+            <Head>
+        <title>Categories- IEI-BLC FCRIT</title>
+        <meta name="title" content="IEI-BLC FCRIT" />
+
+      </Head>
             <Header /><NavBa />
             <Text fontSize="3xl" fontWeight="bold" color="black" marginStart={"300"}>
                 Research Excellence (National/Regional)

@@ -11,6 +11,11 @@ import NavBa from '../components/Navba';
 const generalInstructions = () => {
     return (
         <div>
+            <Head>
+        <title>Categories- IEI-BLC FCRIT</title>
+        <meta name="title" content="IEI-BLC FCRIT" />
+
+      </Head>
 <Header/><NavBa />
       <Text color="black" >
       <Center fontWeight="bold" color="black" fontSize="2xl">

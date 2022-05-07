@@ -152,9 +152,6 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem as={Button} bgColor="gray" color={"black"} to="/photo">
           Photo-Gallery
         </MenuItem>
-        <MenuItem as={Button} bgColor="gray" color={"black"} to="/">
-          Previous Year Awardees
-        </MenuItem>
       </Stack>
     </Box>
   );

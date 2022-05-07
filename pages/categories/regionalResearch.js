@@ -21,10 +21,10 @@ const regionalResearch = () => {
     return (
         <div>
             <Head>
-                <title>Regional Research Excellence</title>
-                <meta name="title" content="IEI-BLC FCRIT" />
+        <title>Categories- IEI-BLC FCRIT</title>
+        <meta name="title" content="IEI-BLC FCRIT" />
 
-            </Head>
+      </Head>
 
             <VideoBackground />
             <Header /><NavBa />

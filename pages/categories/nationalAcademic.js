@@ -22,10 +22,10 @@ const nationalAcademic = () => {
     return (
         <div>
             <Head>
-                <title>National Academic Excellence</title>
-                <meta name="title" content="IEI-BLC FCRIT" />
+        <title>Categories- IEI-BLC FCRIT</title>
+        <meta name="title" content="IEI-BLC FCRIT" />
 
-            </Head>
+      </Head>
             <VideoBackground />
             <Header /><NavBa />
             <Center fontSize="6xl" fontWeight="bold" color="black">

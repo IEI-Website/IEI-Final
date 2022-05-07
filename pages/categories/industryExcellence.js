@@ -10,6 +10,11 @@ import NavBa from '../components/Navba';
 const industryExcellence = () => {
     return (
         <div>
+            <Head>
+        <title>Categories- IEI-BLC FCRIT</title>
+        <meta name="title" content="IEI-BLC FCRIT" />
+
+      </Head>
             <Header/><NavBa />
             <Text  fontSize="xl" color="black" marginStart={"350"}>
       <Text fontSize="3xl" fontWeight="bold" color="black">

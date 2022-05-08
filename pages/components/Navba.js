@@ -143,7 +143,7 @@ const MenuLinks = ({ isOpen }) => {
             <MenuItem align="center" to="/categories/generalInstructions" color={"black"}>Instructions </MenuItem>
             <MenuItem align="center" to="/register/regdet" color={"black"}>Registration Details </MenuItem>
             <MenuItem align="center" to="/register" color={"black"}>Registration Form</MenuItem>
-            <MenuItem align="center" to="/register" color={"black"}>Payment Details</MenuItem>
+            <MenuItem align="center" to="/register/paymentDetails" color={"black"}>Payment Details</MenuItem>
           </MenuList>
         </Menu>
 

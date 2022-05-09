@@ -3,14 +3,14 @@ import { Link, Box, Flex, Text, Button, Stack, Menu, MenuButton, MenuList, MenuI
 import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons'
 
 const NavBa = (props) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isopen, setIsOpen] = React.useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isopen);
 
   return (
     <NavBaContainer {...props}>
-      <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuToggle toggle={toggle} isOpen={isopen} />
+      <MenuLinks isOpen={isopen} />
     </NavBaContainer>
   );
 };
@@ -37,10 +37,10 @@ const MenuIcon = () => (
   </svg>
 );
 
-const MenuToggle = ({ toggle, isOpen }) => {
+const MenuToggle = ({ toggle, isopen }) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
-      {isOpen ? <CloseIcon /> : <MenuIcon />}
+      {isopen ? <CloseIcon /> : <MenuIcon />}
     </Box>
   );
 };
@@ -55,10 +55,10 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpen }) => {
+const MenuLinks = ({ isopen }) => {
   return (
     <Box
-      display={{ base: isOpen ? "block" : "none", md: "block" }}
+      display={{ base: isopen ? "block" : "none", md: "block" }}
       flexBasis={{ base: "100%", md: "auto" }}
     >
       <Stack

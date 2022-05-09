@@ -54,6 +54,18 @@ const Details = () => {
     }
     return response;
   }
+  function verify(){
+    var applicantName = $("#name").val();
+    var sem = $("#sem").val();
+    var dept = $("#department").val();
+    var insti = $("#institute").val();
+    var award = $("#Category").val();
+    console.log("Verifying fields ");
+    if (applicantName == '' || dept == '' || insti=='' || award == ''| pdfUrl == null || !checkVal || !checkVal2){
+      return false;
+    }
+    return true;
+  }
   async function send() {
     var formData = new FormData();
     formData.append("userDoc", fieldsPdf);
@@ -264,7 +276,19 @@ const Details = () => {
                 mt="5"
                 mb="5"
                 bgColor="green.500"
-                onClick={send}
+                onClick={ ()=>{
+                  if (verify() == true){
+                    send()}
+                  else{
+                    toast({
+                      title: "Incomplete Form",
+                      description: "Please Fill all the details",
+                      status: "error",
+                      duration: 3000,
+                      isClosable: true,
+                    });
+                } }
+              }
                 size="lg"
               >
                 Submit

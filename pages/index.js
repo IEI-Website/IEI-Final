@@ -50,7 +50,7 @@ export default function Home() {
 
       <br /><br /><br />
       <Flex overflow={'hidden'} alignContent={'center'} marginRight={"full"}>
-        <Carousel width={'100%'} showThumbs={false}>
+        <Carousel width={'100%'} showThumbs={false} autoPlay={true} interval={'5000'} >
           <div>
             <img src="/monument2.jpg" alt="image1" />
             <p className="legend">IEI-BLC</p>

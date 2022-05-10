@@ -39,7 +39,7 @@ export default function Home() {
       <br />
       <br />
       <Center>
-        <Carousel width={'1150px'}  >
+        <Carousel width={'1150px'} showThumbs={false} autoPlay={true} interval={'5000'} >
           <div>
             <img src="/photos/awards1.jpeg" alt="image1" />
              
@@ -91,7 +91,7 @@ export default function Home() {
       <br />
       <br />
       <Center>
-        <Carousel width={'1150px'} showThumbs={false}>
+        <Carousel width={'1150px'} showThumbs={false} autoPlay={true} interval={'5000'}>
           <div>
             <img src="/photos/awards9.jpeg" alt="image1" />
             

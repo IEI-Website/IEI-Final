@@ -46,6 +46,7 @@ const Details = () => {
   const [fieldsUrl, setFieldsUrl] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+  const [checkVal2, setCheckVal2] = useState(Boolean(false));
   const [checkVal, setCheckVal] = useState(Boolean(false));
   const { isSubmitted, onFormSubmit } = useDisclosure({ defaultIsOpen: false });
   function handleErrors(response) {
@@ -136,7 +137,10 @@ const Details = () => {
     e.preventDefault();
     setCheckVal(!checkVal);
   };
-
+  const handleCheckDecision = (e) => {
+    e.preventDefault();
+    setCheckVal2(!checkVal2);
+  }
   return (
     <Box>
       <Center
@@ -270,7 +274,13 @@ const Details = () => {
                   </Checkbox>
                 </FormControl>
               </GridItem>
-
+              <GridItem colSpan={2}>
+                <FormControl isRequired>
+                  <Checkbox onChange={handleCheckDecision} isRequired>
+                  I/We hereby agree to the final decision of  judges.
+                  </Checkbox>
+                </FormControl>
+              </GridItem>
               <br></br>
               <Button
                 mt="5"

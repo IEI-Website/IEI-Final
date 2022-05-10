@@ -40,8 +40,62 @@ const researchExcellence = () => {
                     6.Conference paper presentation certificates if any <br />
                     7. Research and consultancy project details if any <br />
                     8.  Any other achievement (prizes, award received) <br />
-                    9. Research promotion activities if any (Endorsement letter by HOD) <br /></Text>
+                    9. Research promotion activities if any (Endorsement letter by HOD) <br />
+                    <br /><br /><Text fontSize="3xl" fontWeight="bold">
+                        EVALUATION CRITERIA
+                    </Text>
+                    <b>•	Research Publications (h-index) (Quantitative)</b>
+                    <br />
+                    ✓	List of research publications with DOI link.
+                    <br />
+                    <b>•	Consultancy projects  (Quantitative)</b>
+                    <br />
+                    ✓	List of projects, funding agency, relevant proofs supporting MoU
+                    <br />
+                    <b>•	Patents (Quantitative)</b>
+                    <br />
+                    ✓	List of submitted and awarded patents with respective proofs
+                    <br />
+                    <b>•	Citations of publication (Quantitative)</b>
+                    <br />
+                    ✓	Quantitative narrative with supporting proofs.
+                    <br />
+                    <b>•	In-house lab development</b>
+                    <br />
+                    ✓	A qualitative description of efforts, outcomes and impact; certified by HOD/Principal
+                    <br />
+                    <b>•	Contribution in promoting research culture in Institute</b>
+                    <br />
+                    ✓	A qualitative description of efforts, outcomes and impact; certified by HOD/Principal
+                    <br />
+                    <b>•	Any guided research (Quantitative)</b>
+                    <br />
+                    ✓	List of registered, and completed PhDs.
+                    <br />
+                    <b>•	Societal relevance of research</b>
+                    <br />
+                    ✓	A qualitative description of efforts, outcomes and impact; certified by HOD/Principal               
+                    <br />
+                    <b>•	Any awarded research (Quantitative)</b>
+                    <br />
+                    ✓	List of awards with supporting documents
+                    <br />
+                    <b>•	Any other achievement (Quantitative)</b>
+                    <br />
+                    ✓	Participation in conferences as reviewer/advisor
+                    <br />
+                    ✓	Participation on Editorial Board of any Journal/ Technical Magazine
+                    <br />
+                    ✓	Research activities taken up in local chapters of professional societies
+                    <br />
+                    ✓	Formation of research bodies
+                    <br />
+                    ✓	And any other
+                    <br />
+                </Text>
+
             </Text>
+            <br /><br />
             <br />
             <br />
             <br />

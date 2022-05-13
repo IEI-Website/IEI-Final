@@ -162,11 +162,10 @@ const Details = () => {
           >
             <GridItem>
               <Heading textColor={secondaryTextColor} size="2xl">
-                Registration Form
+                Registration/Proposal Submission Form
               </Heading>
-              <Text textColor={secondaryTextColor}>
-                Please make sure you upload all the necessary Documents before
-                submitting the form.
+              <Text fontSize={'20px'} textColor={secondaryTextColor}>
+                Upload the proposal with all the supporting documents.
               </Text>
             </GridItem>
             <GridItem colSpan={2}>

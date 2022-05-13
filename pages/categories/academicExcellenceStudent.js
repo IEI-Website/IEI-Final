@@ -22,7 +22,7 @@ const academicExcellence = () => {
                     Students <br />
                 </Text>
                 Entry Level criteria:<br />
-                -Students who are in final year in 2022 or passed out in A.Y 2020- 21<br />
+                -Students who are in final year in 2022 or graduated in A.Y 2020- 21<br />
                 <br />
                 <Text fontSize="3xl" fontWeight="bold">
                     Document to be uploaded as a single .pdf

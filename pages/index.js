@@ -38,7 +38,7 @@ export default function Home() {
 
           <Box width={"100%"} boxShadow='outline' p='6' rounded='md'>
             <Text bgColor={"telegram.700"} fontWeight="bold">Latest Updates</Text>
-            <Marquee>Registration will start soon. Please stay tune. </Marquee>
+            <Marquee>Registrations are open and for each category applied registration is separate. </Marquee>
           </Box>
 
         </Flex>

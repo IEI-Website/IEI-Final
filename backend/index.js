@@ -85,13 +85,13 @@ app.get('/test', function(req, res) {
   res.json({'status':'working'});
   res.status(200)
 });
-app.post('/mergepdf',mergepdffilesupload.array('userDoc',2),(req,res) => {
+app.post('/mergepdf',mergepdffilesupload.array('userDoc',3),(req,res) => {
   console.log("post call working")
   // console.log("files",req);
 
   const files = []
   outputFilePath = dir+"/response/response_"+Date.now()+".pdf";
-  if(req.files && req.files.length==2){
+  if(req.files && req.files.length==3){
 
     req.files.forEach(file => {
       console.log(file.path)
@@ -129,7 +129,17 @@ app.post('/mergepdf',mergepdffilesupload.array('userDoc',2),(req,res) => {
      
 }
 else{
-res.status(404).json({error: 'Invalid request'});
+  files.forEach(file => {
+    fs.unlink(file, function (err) {
+      if (err){ 
+        res.status(404).json({error:'Improper files received!'});
+        throw err;
+      }
+      // if no error, file has been deleted successfully
+      console.log('File deleted!');
+    });
+    });
+    res.status(404).json({error: 'Invalid request'});
 }
 });
 

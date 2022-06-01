@@ -42,6 +42,7 @@ const Details = () => {
   // var pdf_file;
   const [pdfFile, setPdfFile] = useState(null);
   const [fieldsPdf, setFieldsPdf] = useState(null);
+  const [receiptPdf, setReceiptPdf] = useState(null);
   const [pdfUrl, setPdfUrl] = useState(null);
   const [fieldsUrl, setFieldsUrl] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -61,14 +62,15 @@ const Details = () => {
     var dept = $("#department").val();
     var insti = $("#institute").val();
     var award = $("#Category").val();
-    console.log("Verifying fields ");
-    if (applicantName == '' || dept == '' || insti=='' || award == ''| pdfUrl == null || !checkVal || !checkVal2){
+    // console.log("Verifying fields ");
+    if (applicantName == '' || dept == '' || insti=='' || award == ''| pdfUrl == null || receiptPdf == null || !checkVal || !checkVal2){
       return false;
     }
     return true;
   }
   async function send() {
     var formData = new FormData();
+    formData.append("userDoc", receiptPdf);
     formData.append("userDoc", fieldsPdf);
     formData.append("userDoc", pdfFile);
     const config = {
@@ -111,6 +113,7 @@ const Details = () => {
     var dept = $("#department").val();
     var insti = $("#institute").val();
     var award = $("#Category").val();
+    var contact = $('#contactNo').val();
     var role = $("#SelectOptions").find("#applicant-role").val();
     doc.text(20, 20, "Name : " + applicantName);
     if (sem.length!=0){
@@ -122,8 +125,9 @@ const Details = () => {
     doc.text(20, 40, "Department : " + dept);
     doc.text(20, 50, "Institute : " + insti);
     doc.text(20, 60, "Award Category : " + award);
+    doc.text(20, 70, "Contact No. : "+contact );
     if (!(typeof role === "undefined")) {
-      doc.text(20, 70, "Applicant Role : " + role);
+      doc.text(20, 80, "Applicant Role : " + role);
     }
     var blobPDF = new Blob(
       [doc.output("blob", { filename: "userDetails.pdf" })],
@@ -133,6 +137,10 @@ const Details = () => {
     setFieldsPdf(blobPDF);
     setFieldsUrl(blobUrl);
   };
+  const handleReceipt = (e) => {
+    e.preventDefault();
+    setReceiptPdf(e.target.files[0]);
+  }
   const checkBoxChange = (e) => {
     e.preventDefault();
     setCheckVal(!checkVal);
@@ -203,12 +211,35 @@ const Details = () => {
                 <Input id="sem"  placeholder="6" />
               </FormControl>
             </GridItem>
+            
+            <GridItem colSpan={2}>
+              <FormControl isRequired>
+                <FormLabel textColor={secondaryTextColor}>
+                  Contact No.
+                </FormLabel>
+                <Input id="contactNo" />
+              </FormControl>
+            </GridItem>
+            
+
             <GridItem colSpan={2}>
               <AwardCategories isRequired />
             </GridItem>
 
             <GridItem id="SelectOptions" colSpan={2}></GridItem>
-
+            <GridItem id="receiptPdf" colSpan={2}>
+            <FormControl isRequired={true}>
+                <FormLabel>Upload Transaction Receipt here</FormLabel>
+                <Input
+                  isRequired
+                  accept="application/pdf"
+                  type="file"
+                  id="receiptDoc"
+                  onChange={handleReceipt}
+                />
+                </FormControl>
+              
+            </GridItem>
             <GridItem colSpan={1}>
               <FormControl isRequired={true}>
                 <FormLabel>Upload all documents as a single pdf here</FormLabel>

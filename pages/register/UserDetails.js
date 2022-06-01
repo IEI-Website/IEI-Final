@@ -125,7 +125,7 @@ const Details = () => {
     doc.text(20, 40, "Department : " + dept);
     doc.text(20, 50, "Institute : " + insti);
     doc.text(20, 60, "Award Category : " + award);
-    doc.text(20, 70, "Contact No. : "+contact );
+    doc.text(20, 70, "Contact Details (Mobile Number and Email) : "+contact );
     if (!(typeof role === "undefined")) {
       doc.text(20, 80, "Applicant Role : " + role);
     }

@@ -9,6 +9,15 @@ import Link from 'next/link';
 import NavBa from '../components/Navba';
 
 const generalInstructions = () => {
+    function downloadPDF(pdf) {
+        const linkSource = `data:application/pdf;base64,${pdf}`;
+        const downloadLink = document.createElement("a");
+        const fileName = "vct_illustration.pdf";
+
+        downloadLink.href = linkSource;
+        downloadLink.download = fileName;
+        downloadLink.click();
+    }
 
     return (
         <div>
@@ -61,66 +70,12 @@ const generalInstructions = () => {
                 <br />
                 <br />
                 <br />
-                <Center fontWeight="bold" color="black" fontSize="2xl">
-                    Bonafide format <br /></Center>
-                <br />
-                
-                <Text fontWeight="bold" color="black">
-                    **(Please issue the letter on the Letterhead of the Institute)
-                </Text>
-                <br />
-                <br />
-                <br />
-                <Center fontWeight="bold" color="black" fontSize="2xl">
-                    <u>To Whomsoever it may concern</u> <br /></Center>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <Center color="black">
-                    <Text fontWeight="bold" color="black">
-                        This is to certify that Mr./Ms. ____________ is a bonafide student/ Research scholar/ Faculty member
-                        <br />
-                        of this Department/Institute from/during the Academic Year 20___ - 20___.
-                        <br />
-                        This certificate is issued to the applicant on his/her request, for applying for IEI-FCRIT Excellence
-                        <br />
-                        awards under ______Category.
-                        <br />
-                    </Text>
-                </Center>
-            </Text>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <HStack align="flex-start"  pl={310}>
-                <Box pr={5} pb={10} >
-                    <Text fontWeight="bold" fontSize='lg' color="black">
-                        Institute Seal
-                        <br />
-                    </Text>
-                </Box>
 
-                <Box pl={200} >
-                    <Text fontWeight="bold" fontSize='lg' color="black">
-                        Name:
-                        <br />
-                        Signature
-                        <br />
-                        HOD/PHD Guide/Principal
-                    </Text>
-                </Box>
-            </HStack>
+            </Text>
+            <Center fontWeight="bold" color="black" fontSize="2xl">
+                <a href="/Bonafide format.pdf" download>Click to download Bonafide format</a>
+
+            </Center>
             <br />
             <br />
             <br />

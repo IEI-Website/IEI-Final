@@ -38,7 +38,7 @@ export default function Home() {
 
           <Box width={"100%"} boxShadow='outline' p='6' rounded='md'>
             <Text bgColor={"telegram.700"} fontWeight="bold">Latest Updates</Text>
-            <Marquee>Registrations dates extended till 15th July 2022. </Marquee>
+            <Marquee>Registrations date extended till 15th July 2022. </Marquee>
           </Box>
 
         </Flex>

@@ -1,5 +1,5 @@
 # IEI-Website
-(devloped for IEI-BLC-FCRIT)
+(developed for IEI-BLC-FCRIT)
 
 # The Team:
 Students Of FCRIT, VASHI Computer Department(2019-2023)

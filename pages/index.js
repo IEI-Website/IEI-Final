@@ -38,7 +38,7 @@ export default function Home() {
 
           <Box width={"100%"} boxShadow='outline' p='6' rounded='md'>
             <Text bgColor={"telegram.700"} fontWeight="bold">Latest Updates</Text>
-            <b> Result are out !!! <a href="/ceremony/announcement" >Click Here</a> </b>
+            <b>  Results of IEI BLC - FCRIT excellence awards out !!! <a href="/ceremony/announcement" >Click Here</a> </b>
           </Box>
 
         </Flex>

@@ -148,7 +148,7 @@ const MenuLinks = ({ isopen }) => {
         </Menu>
 
         <MenuItem as={Button} bgColor="gray" color={"black"} to="/ceremony/announcement">
-         Award Announcement 
+         Result Announcement
         </MenuItem>
 
         <MenuItem as={Button} bgColor="gray" color={"black"} to="/photo">

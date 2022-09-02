@@ -38,7 +38,7 @@ export default function Home() {
 
           <Box width={"100%"} boxShadow='outline' p='6' rounded='md'>
             <Text bgColor={"telegram.700"} fontWeight="bold">Latest Updates</Text>
-            <b> Result are out !!! <a target="_blank" href="https://drive.google.com/file/d/1XWjKG4NmQW_aYo6IZabdYeP3wjRfX-FU/view?usp=sharing">Click Here</a> </b>
+            <b> Result are out !!! <a href="/ceremony/announcement" >Click Here</a> </b>
           </Box>
 
         </Flex>

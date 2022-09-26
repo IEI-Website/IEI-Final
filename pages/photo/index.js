@@ -27,57 +27,7 @@ export default function Home() {
         </Heading>
       </Center>
 
-      <HStack>
-        <Box backgroundColor="black" h="3px" marginLeft="5%" w="30%" />
-        <Center>
-          <Heading >
-            2019 award ceremony
-          </Heading>
-        </Center>
-        <Box backgroundColor="black" h="3px" marginRight="5%" w="30%" />
-      </HStack>
-      <br />
-      <br />
-      <Center>
-        <Carousel width={'1150px'} showThumbs={false} autoPlay={true} interval={'5000'} >
-          <div>
-            <img src="/photos/awards1.jpeg" alt="image1" />
-
-          </div>
-          <div>
-            <img src="/photos/awards2.jpeg" alt="image2" />
-
-          </div>
-          <div>
-            <img src="/photos/awards3.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards4.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards5.jpeg" alt="image1" />
-
-          </div>
-          <div>
-            <img src="/photos/awards6.jpeg" alt="image2" />
-
-          </div>
-          <div>
-            <img src="/photos/awards7.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards8.jpeg" alt="image4" />
-
-          </div>
-        </Carousel>
-      </Center>
-      <br />
-      <br />
-      <br />
-      <br />
+      
 
       <HStack>
         <Box backgroundColor="black" h="3px" marginLeft="5%" w="30%" />
@@ -406,6 +356,60 @@ export default function Home() {
         </Carousel>
       </Center>
 
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <HStack>
+        <Box backgroundColor="black" h="3px" marginLeft="5%" w="30%" />
+        <Center>
+          <Heading >
+            2019 award ceremony
+          </Heading>
+        </Center>
+        <Box backgroundColor="black" h="3px" marginRight="5%" w="30%" />
+      </HStack>
+      <br />
+      <br />
+      <Center>
+        <Carousel width={'1150px'} showThumbs={false} autoPlay={true} interval={'5000'} >
+          <div>
+            <img src="/photos/awards1.jpeg" alt="image1" />
+
+          </div>
+          <div>
+            <img src="/photos/awards2.jpeg" alt="image2" />
+
+          </div>
+          <div>
+            <img src="/photos/awards3.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards4.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards5.jpeg" alt="image1" />
+
+          </div>
+          <div>
+            <img src="/photos/awards6.jpeg" alt="image2" />
+
+          </div>
+          <div>
+            <img src="/photos/awards7.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards8.jpeg" alt="image4" />
+
+          </div>
+        </Carousel>
+      </Center>
       <br />
       <br />
       <br />

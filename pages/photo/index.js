@@ -83,148 +83,6 @@ export default function Home() {
         <Box backgroundColor="black" h="3px" marginLeft="5%" w="30%" />
         <Center>
           <Heading >
-            IEI 2021 Awardees
-          </Heading>
-        </Center>
-        <Box backgroundColor="black" h="3px" marginRight="5%" w="30%" />
-      </HStack>
-      <br />
-      <br />
-      <Center>
-        <Carousel width={'1150px'} showThumbs={false} autoPlay={true} interval={'5000'}>
-          <div>
-            <img src="/photos/awards9.jpeg" alt="image1" />
-
-          </div>
-          <div>
-            <img src="/photos/awards10.jpeg" alt="image2" />
-
-          </div>
-          <div>
-            <img src="/photos/awards11.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards12.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards13.jpeg" alt="image1" />
-
-          </div>
-          <div>
-            <img src="/photos/awards14.jpeg" alt="image2" />
-
-          </div>
-          <div>
-            <img src="/photos/awards15.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards16.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards17.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards18.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards19.jpeg" alt="image1" />
-
-          </div>
-          <div>
-            <img src="/photos/awards20.jpeg" alt="image2" />
-
-          </div>
-          <div>
-            <img src="/photos/awards21.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards22.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards23.jpeg" alt="image1" />
-
-          </div>
-          <div>
-            <img src="/photos/awards24.jpeg" alt="image2" />
-
-          </div>
-          <div>
-            <img src="/photos/awards25.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards26.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards27.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards28.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards29.jpeg" alt="image1" />
-
-          </div>
-          <div>
-            <img src="/photos/awards30.jpeg" alt="image2" />
-
-          </div>
-          <div>
-            <img src="/photos/awards31.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards32.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards33.jpeg" alt="image1" />
-
-          </div>
-          <div>
-            <img src="/photos/awards34.jpeg" alt="image2" />
-
-          </div>
-          <div>
-            <img src="/photos/awards35.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards36.jpeg" alt="image4" />
-
-          </div>
-          <div>
-            <img src="/photos/awards37.jpeg" alt="image3" />
-
-          </div>
-          <div>
-            <img src="/photos/awards38.jpeg" alt="image4" />
-
-          </div>
-        </Carousel>
-      </Center>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <HStack>
-        <Box backgroundColor="black" h="3px" marginLeft="5%" w="30%" />
-        <Center>
-          <Heading >
             IEI 2022 Awardees
           </Heading>
         </Center>
@@ -404,6 +262,150 @@ export default function Home() {
           </div>
         </Carousel>
       </Center>
+
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <HStack>
+        <Box backgroundColor="black" h="3px" marginLeft="5%" w="30%" />
+        <Center>
+          <Heading >
+            IEI 2021 Awardees
+          </Heading>
+        </Center>
+        <Box backgroundColor="black" h="3px" marginRight="5%" w="30%" />
+      </HStack>
+      <br />
+      <br />
+      <Center>
+        <Carousel width={'1150px'} showThumbs={false} autoPlay={true} interval={'5000'}>
+          <div>
+            <img src="/photos/awards9.jpeg" alt="image1" />
+
+          </div>
+          <div>
+            <img src="/photos/awards10.jpeg" alt="image2" />
+
+          </div>
+          <div>
+            <img src="/photos/awards11.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards12.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards13.jpeg" alt="image1" />
+
+          </div>
+          <div>
+            <img src="/photos/awards14.jpeg" alt="image2" />
+
+          </div>
+          <div>
+            <img src="/photos/awards15.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards16.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards17.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards18.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards19.jpeg" alt="image1" />
+
+          </div>
+          <div>
+            <img src="/photos/awards20.jpeg" alt="image2" />
+
+          </div>
+          <div>
+            <img src="/photos/awards21.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards22.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards23.jpeg" alt="image1" />
+
+          </div>
+          <div>
+            <img src="/photos/awards24.jpeg" alt="image2" />
+
+          </div>
+          <div>
+            <img src="/photos/awards25.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards26.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards27.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards28.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards29.jpeg" alt="image1" />
+
+          </div>
+          <div>
+            <img src="/photos/awards30.jpeg" alt="image2" />
+
+          </div>
+          <div>
+            <img src="/photos/awards31.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards32.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards33.jpeg" alt="image1" />
+
+          </div>
+          <div>
+            <img src="/photos/awards34.jpeg" alt="image2" />
+
+          </div>
+          <div>
+            <img src="/photos/awards35.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards36.jpeg" alt="image4" />
+
+          </div>
+          <div>
+            <img src="/photos/awards37.jpeg" alt="image3" />
+
+          </div>
+          <div>
+            <img src="/photos/awards38.jpeg" alt="image4" />
+
+          </div>
+        </Carousel>
+      </Center>
+
       <br />
       <br />
       <br />
